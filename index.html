@@ -1280,7 +1280,7 @@ function teacherTodayClasses(teacher){
 }
 
 /* ---- settings, periods, branding ---- */
-function getSetting(id, def){ const r = DB.settings.find(s=>s.id===id); if(!r) return def; try{ return JSON.parse(r.value); }catch(e){ return def; } }
+function getSetting(id, def){ const r = DB.settings.find(s=>s.id===id); if(!r) return def; if(r.value!==null && typeof r.value==='object') return r.value; /* Firestore loader already parsed it */ try{ return JSON.parse(r.value); }catch(e){ return def; } }
 function setSetting(id, val){ let r = DB.settings.find(s=>s.id===id); if(!r){ r = {id, value:''}; DB.settings.push(r); } r.value = JSON.stringify(val); syncUpsert('settings', r); }
 function applyPeriodConfig(){
   const list = getSetting('periods', null); if(!list || !list.length) return;
@@ -1909,7 +1909,7 @@ function renderTeacherDashboard(teacher){
 
   const day = state.teacherDay || (WEEKDAYS.indexOf(todayDayName())>-1 ? todayDayName() : 'Mon'), dDate = dateForDay(day);
   html += '<div class="card"><h3>My classes · '+day+' ('+dDate+')</h3><div class="day-chips">'
-    + WEEKDAYS.map(d=>'<button class="day-chip '+(d===day?'on':'')+'" data-day="'+d+'">'+d+(d===todayDayName()?' ●':'')+'</button>').join('')+'</div>';
+    + WEEKDAYS.map(d=>'<button class="day-chip '+(d===day?'on':'')+'" data-day="'+d+'">'+d+(d===todayDayName()?' ●':'')+' ('+teacherClassesOn(teacher,d).length+')</button>').join('')+'</div>';
   const today = teacherClassesOn(teacher, day);
   if(!today.length){ html += '<p class="empty">No classes on '+day+'.</p>'; }
   else {
@@ -1925,19 +1925,29 @@ function renderTeacherDashboard(teacher){
   html += '</div>';
   html += holidayUpcomingHtml();
 
+  const clsDayCount = d=>teacherClassesOn(teacher, d).length;
+  const clsWeekCount = WEEKDAYS.reduce((n,d)=>n+clsDayCount(d),0);
+  const clsTodayCount = WEEKDAYS.indexOf(todayDayName())>-1 ? clsDayCount(todayDayName()) : 0;
+  /* classes held = distinct (subject, date, period) sessions with attendance recorded, up to today */
+  const heldSet = new Set(), heldBySub = {}, tdy = todayStr(), mySubIds = new Set(subjects.map(x=>x.id));
+  DB.attendance.forEach(a=>{ if(mySubIds.has(a.subjectId) && a.date<=tdy){ const k=a.subjectId+'|'+a.date+'|'+a.period; if(!heldSet.has(k)){ heldSet.add(k); heldBySub[a.subjectId]=(heldBySub[a.subjectId]||0)+1; } } });
   html += '<div class="stat-grid">'
+    + '<div class="stat-card kpi good"><div class="num">'+heldSet.size+'</div><div class="label">Classes held till today</div></div>'
+    + '<div class="stat-card kpi"><div class="num">'+clsTodayCount+'</div><div class="label">Classes today ('+todayDayName()+')</div></div>'
+    + '<div class="stat-card kpi"><div class="num">'+today.length+'</div><div class="label">Classes on '+day+'</div></div>'
+    + '<div class="stat-card kpi"><div class="num">'+clsWeekCount+'</div><div class="label">Classes per week</div></div>'
     + '<div class="stat-card"><div class="num">'+subjects.length+'</div><div class="label">Subjects assigned</div></div>'
     + '<div class="stat-card"><div class="num">'+DB.students.filter(s=>subjects.some(su=>su.classId===s.classId)).length+'</div><div class="label">Students taught</div></div>'
     + '<div class="stat-card"><div class="num">'+DB.attendance.filter(a=>a.teacherId===teacher.id).length+'</div><div class="label">Attendance entries logged</div></div>'
     + '</div>';
 
-  html += '<div class="card"><h3>My subjects</h3><table class="table"><thead><tr><th>Code</th><th>Subject</th><th>Class</th><th>Average attendance</th></tr></thead><tbody>'
+  html += '<div class="card"><h3>My subjects</h3><table class="table"><thead><tr><th>Code</th><th>Subject</th><th>Class</th><th>Classes held</th><th>Average attendance</th></tr></thead><tbody>'
     + subjects.map(su=>{
         const cls = DB.classes.find(c=>c.id===su.classId);
         const stats = subjectOverallStats(su.id);
         const info = statusFor(stats.pct);
-        return '<tr><td>'+escapeHtml(su.code)+'</td><td>'+escapeHtml(su.name)+'</td><td>'+cls.course+' S'+cls.semester+'-'+cls.section+'</td><td><span class="badge badge-'+info.cls+'">'+stats.pct+'%</span></td></tr>';
-      }).join('') || '<tr><td colspan="4" class="empty">No subjects assigned yet.</td></tr>'
+        return '<tr><td>'+escapeHtml(su.code)+'</td><td>'+escapeHtml(su.name)+'</td><td>'+cls.course+' S'+cls.semester+'-'+cls.section+'</td><td>'+(heldBySub[su.id]||0)+'</td><td><span class="badge badge-'+info.cls+'">'+stats.pct+'%</span></td></tr>';
+      }).join('') || '<tr><td colspan="5" class="empty">No subjects assigned yet.</td></tr>'
     + '</tbody></table></div>';
 
   $('#teacher-content').innerHTML = html;
@@ -2388,6 +2398,8 @@ async function saveTimetable(){
       ups=ups.filter(u=>u.period<=pl.length);
     }
   }
+  /* Added: remove older entries for the same slot that have a different id (e.g. imported data), so the new/cleared slot really replaces them */
+  Object.keys(state.ttDraft).forEach(k=>{ const v=state.ttDraft[k]; DB.timetable.forEach(t=>{ if((!v||t.id!==v.id) && ttKey(t.classId,t.day,t.period)===k && !dels.includes(t.id)) dels.push(t.id); }); });
   const btn=$('#tt-save'); if(btn){ btn.disabled=true; btn.textContent='Saving…'; }
   const parts=[{table:'timetable',ups,dels}]; if(setRec) parts.push({table:'settings',ups:[setRec],dels:[]});
   const ok=await syncMulti(parts);
@@ -3648,6 +3660,15 @@ function initApp(){
   if(BACKEND_ON()) schedulePoll();
 }
 initApp();
+
+/* ---- added: one-time clean-up of old cached page copies (no database reads) ---- */
+(function(){
+  const BUILD='tt2';
+  try{ if(localStorage.getItem('atl_build')!==BUILD){ localStorage.setItem('atl_build',BUILD);
+    const jobs=[]; if(window.caches) jobs.push(caches.keys().then(ks=>Promise.all(ks.map(k=>caches.delete(k)))));
+    if(navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistrations().then(rs=>Promise.all(rs.map(r=>r.unregister()))));
+    if(jobs.length) Promise.all(jobs).then(()=>location.reload()).catch(()=>{}); } }catch(e){}
+})();
 </script>
 <script>
 if('serviceWorker' in navigator){ window.addEventListener('load',function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
