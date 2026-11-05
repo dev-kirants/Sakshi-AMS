@@ -46,24 +46,20 @@
   button, input, select{font-family:var(--font-sans);}
   button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible{outline:2px solid var(--primary); outline-offset:2px;}
   @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
-
   .view{display:none;}
   .view.active{display:block;}
-
-  /* ---------- Login ---------- */
   .login-wrap{min-height:100vh; display:grid; grid-template-columns:1.1fr 1fr;}
   @media (max-width:860px){ .login-wrap{grid-template-columns:1fr;} }
   .login-hero{background:var(--ink); color:var(--paper); padding:64px 56px; display:flex; flex-direction:column; justify-content:center; gap:22px;}
-  .login-hero .eyebrow{color:var(--gold); font-weight:600; font-size:0.85rem; letter-spacing:0.02em;}
-  .login-hero h1{font-size:clamp(2.1rem,4vw,3.2rem); line-height:1.12; font-weight:600; max-width:11ch; color:#EFEDFB;}
-  .login-hero p{color:#CFE3E6; max-width:42ch; line-height:1.65; font-size:1rem;}
   .ledger-mark{display:flex; flex-direction:column; gap:14px; margin-top:8px;}
   .ledger-row{display:flex; align-items:center; gap:12px;}
   .ledger-dot{width:13px; height:13px; border-radius:50%; border:2px solid #7A74B8; flex-shrink:0;}
   .ledger-dot.done{background:var(--gold); border-color:var(--gold);}
   .ledger-line{height:2px; background:rgba(255,255,255,0.16); flex:1;}
   .ledger-line.short{width:55%; flex:none;}
-
+  .login-hero .eyebrow{color:var(--gold); font-weight:600; font-size:0.85rem; letter-spacing:0.02em;}
+  .login-hero h1{font-size:clamp(2.1rem,4vw,3.2rem); line-height:1.12; font-weight:600; max-width:11ch; color:#EFEDFB;}
+  .login-hero p{color:#CFE3E6; max-width:42ch; line-height:1.65; font-size:1rem;}
   .login-form-wrap{display:flex; align-items:center; justify-content:center; padding:48px 24px; background:var(--paper);}
   .login-card{width:100%; max-width:400px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:32px;}
   .role-tabs{display:flex; border-bottom:1px solid var(--line); margin-bottom:22px;}
@@ -73,8 +69,6 @@
   .otp-input{letter-spacing:.45em; text-align:center; font-size:1.25rem; font-weight:600;}
   .hint{font-size:0.78rem; color:var(--muted); margin-top:16px; text-align:center; line-height:1.5;}
   .field-error{font-size:0.8rem; color:var(--danger); background:var(--danger-tint); border:1px solid var(--danger); border-radius:var(--radius); padding:8px 10px; margin:-4px 0 14px;}
-
-  /* ---------- Shared form / field styles ---------- */
   .field{margin-bottom:16px;}
   .field label{display:block; font-size:0.82rem; color:var(--muted); margin-bottom:6px;}
   input, select{width:100%; padding:9px 12px; border:1px solid var(--line); border-radius:var(--radius); font-size:0.92rem; background:var(--surface); color:var(--ink);}
@@ -82,8 +76,6 @@
   .form-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-bottom:6px;}
   .form-row{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:12px;}
   .form-row .field{flex:1; min-width:170px; margin-bottom:0;}
-
-  /* ---------- Buttons ---------- */
   .btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:10px 18px; border-radius:var(--radius); border:1px solid transparent; font-weight:600; font-size:0.88rem; cursor:pointer; transition:background-color .15s ease, border-color .15s ease, color .15s ease;}
   .btn-primary{background:var(--primary); color:#fff;}
   .btn-primary:hover{background:var(--primary-dark);}
@@ -93,14 +85,10 @@
   .btn-sm{padding:6px 12px; font-size:0.78rem;}
   .btn-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
   .file-btn{cursor:pointer;}
-
-  /* ---------- Topbar ---------- */
   .topbar{display:none; align-items:center; justify-content:space-between; padding:14px 28px; background:var(--surface); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20;}
-  .topbar .brand{font-family:var(--font-serif); font-weight:600; font-size:1.15rem; color:var(--primary);}
+  .topbar .brand{font-family:var(--font-serif); font-weight:600; font-size:1.15rem; color:#000;}
   .who-wrap{display:flex; align-items:center; gap:14px;}
   .who{font-size:0.85rem; color:var(--muted);}
-
-  /* ---------- App shell ---------- */
   .app-shell{display:grid; grid-template-columns:220px 1fr; min-height:calc(100vh - 58px); align-items:start;}
   @media (max-width:760px){ .app-shell{grid-template-columns:1fr;} .sidebar{display:flex; overflow-x:auto; border-right:none; border-bottom:1px solid var(--line);} }
   .sidebar{background:var(--surface); border-right:1px solid var(--line); padding:20px 12px; position:sticky; top:58px;}
@@ -111,72 +99,60 @@
   .sidebar-link.active{background:var(--primary-tint); color:var(--primary-dark); font-weight:600;}
   .sidebar-link:hover{background:var(--paper);}
   .main{padding:28px; max-width:1180px; margin:0 auto; width:100%;}
-
-  /* ---------- Page bits ---------- */
   .page-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; gap:14px; flex-wrap:wrap;}
   .page-head h1{font-size:1.7rem;}
   .sub{color:var(--muted); font-size:0.88rem; margin-top:4px;}
   .notice{padding:12px 16px; border-radius:var(--radius); margin-bottom:18px; font-size:0.88rem;}
   .notice-warning{background:var(--warning-tint); color:#7a5b06; border:1px solid var(--warning);}
-
   .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px; margin-bottom:18px;}
   .card h3{font-size:1.05rem; margin-bottom:14px;}
-
   .stat-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:18px;}
   .stat-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px;}
   .stat-card .num{font-family:var(--font-serif); font-size:1.7rem; font-weight:600;}
   .stat-card .label{font-size:0.78rem; color:var(--muted); margin-top:2px;}
-
   .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   @media (max-width:760px){ .grid-2{grid-template-columns:1fr;} }
-
   table.table{width:100%; border-collapse:collapse; font-size:0.88rem;}
   .table th{text-align:left; padding:10px 12px; border-bottom:2px solid var(--ink); font-weight:600; font-size:0.76rem; color:var(--muted); text-transform:none;}
   .table td{padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:middle;}
   .table tr:hover td{background:var(--paper);}
   .empty{text-align:center; color:var(--muted); padding:26px !important;}
-
   .badge{display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:100px; font-size:0.75rem; font-weight:600;}
   .badge-success{background:var(--success-tint); color:var(--success);}
   .badge-warning{background:var(--warning-tint); color:var(--warning);}
   .badge-danger{background:var(--danger-tint); color:var(--danger);}
-
   .bar-track{background:var(--line); height:8px; border-radius:4px; overflow:hidden; width:100%; min-width:60px;}
   .bar-fill{height:100%; border-radius:4px;}
   .pct-cell{display:flex; flex-direction:column; gap:4px; min-width:90px;}
   .pct-cell span{font-size:0.82rem; font-weight:600;}
-
   .bar-list{display:flex; flex-direction:column; gap:11px;}
   .bar-row{display:grid; grid-template-columns:150px 1fr 46px; align-items:center; gap:10px; font-size:0.83rem;}
   .bar-label{color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .bar-pct{text-align:right; font-weight:600;}
-
   .donut-wrap{display:flex; align-items:center; gap:26px; flex-wrap:wrap;}
   .donut{width:150px; height:150px; border-radius:50%; position:relative; display:grid; place-items:center; background:conic-gradient(var(--dc) calc(var(--pct)*1%), var(--line) 0);}
   .donut::before{content:''; position:absolute; inset:16px; border-radius:50%; background:var(--surface);}
   .donut span{position:relative; z-index:1; font-family:var(--font-serif); font-size:1.35rem; font-weight:600;}
   .donut-legend div{display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:0.88rem;}
   .dot{width:10px; height:10px; border-radius:50%; display:inline-block;}
-
   .trend{display:flex; gap:18px; align-items:flex-end; height:150px; padding-top:10px;}
   .trend-col{display:flex; flex-direction:column; align-items:center; gap:6px; flex:1;}
   .trend-bar-wrap{height:100px; display:flex; align-items:flex-end; width:100%; justify-content:center;}
   .trend-bar{width:30px; border-radius:3px 3px 0 0; background:var(--primary);}
   .trend-pct{font-size:0.8rem; font-weight:600;}
   .trend-label{font-size:0.76rem; color:var(--muted);}
-
   .toggle-group{display:flex; gap:6px;}
   .toggle-btn{padding:6px 12px; border:1px solid var(--line); background:var(--surface); border-radius:var(--radius); cursor:pointer; font-size:0.78rem; font-weight:600; color:var(--muted); transition:background-color .15s ease, border-color .15s ease, color .15s ease;}
   .toggle-btn.active-present{background:var(--success-tint); border-color:var(--success); color:var(--success);}
   .toggle-btn.active-absent{background:var(--danger-tint); border-color:var(--danger); color:var(--danger);}
   .mark-toolbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;}
   .save-confirm{margin-left:12px; color:var(--success); font-size:0.84rem;}
-
-  /* ---------- Calendar ---------- */
   .cal-toolbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;}
   .cal-legend{display:flex; gap:14px; flex-wrap:wrap; font-size:0.78rem; color:var(--muted);}
   .cal-legend div{display:flex; align-items:center; gap:6px;}
-  .cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px;}
+  .cal-grid{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px; width:100%; max-width:520px; margin-left:auto; margin-right:auto; box-sizing:border-box; padding:4px;}
+  .cal-cell{min-width:0; overflow:hidden; max-height:72px;}
+  @media (max-width:480px){ .cal-grid{gap:3px; padding:2px;} .cal-daynum{font-size:.72rem;} .cal-pct{font-size:.58rem;} .cal-hname{font-size:.5rem;} .cal-cell{max-height:56px;} }
   .cal-dow{text-align:center; font-size:0.72rem; font-weight:600; color:var(--muted); padding-bottom:4px;}
   .cal-cell{aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); font-family:var(--font-sans); cursor:default; padding:2px;}
   .cal-cell.cal-clickable{cursor:pointer;}
@@ -196,8 +172,6 @@
   .cal-pct{font-size:0.66rem; font-weight:600;}
   .cal-detail-list{display:flex; flex-direction:column; gap:8px;}
   .cal-detail-row{display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background:var(--paper); border-radius:var(--radius); font-size:0.85rem;}
-
-  /* ---------- Today's classes (big buttons) ---------- */
   .today-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px;}
   .class-btn{display:flex; flex-direction:column; align-items:flex-start; gap:6px; text-align:left; padding:22px 20px; border-radius:10px; border:1px solid var(--line); background:var(--surface); cursor:pointer; min-height:120px; transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;}
   .class-btn:hover{border-color:var(--primary); box-shadow:0 4px 14px rgba(0,0,0,0.08); transform:translateY(-2px);}
@@ -206,8 +180,6 @@
   .class-btn .cb-meta{font-size:0.82rem; color:var(--muted);}
   .class-btn.cb-done{background:var(--success-tint); border-color:var(--success);}
   .class-btn.cb-done .cb-time{color:var(--success);}
-
-  /* ---------- Timetable grid ---------- */
   .tt-table{width:100%; border-collapse:collapse; font-size:0.84rem;}
   .tt-table th{background:var(--paper); padding:8px; border:1px solid var(--line); font-size:0.74rem; color:var(--muted);}
   .tt-table td{border:1px solid var(--line); padding:4px; vertical-align:top; min-width:120px;}
@@ -218,13 +190,9 @@
   .tt-period-label{font-weight:600; font-size:0.78rem;}
   .tt-period-time{font-size:0.7rem; color:var(--muted); font-weight:400;}
   .tt-empty-cell{color:var(--muted); font-size:0.78rem; text-align:center; padding:14px 4px;}
-
-  /* ---------- Holidays ---------- */
   .holiday-row{display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius); margin-bottom:8px;}
   .holiday-date{font-family:var(--font-serif); font-weight:600; min-width:110px;}
   .holiday-name{flex:1; padding:0 14px;}
-
-  /* ---------- Class notes / content ---------- */
   .session-card{border:1px solid var(--line); border-radius:var(--radius); padding:16px; margin-bottom:12px; background:var(--surface);}
   .session-card .sc-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
   .session-card .sc-title{font-weight:600;}
@@ -235,16 +203,10 @@
   .file-chip:hover{border-color:var(--primary);}
   button.file-chip{cursor:pointer; font-family:var(--font-sans);}
   textarea{width:100%; padding:9px 12px; border:1px solid var(--line); border-radius:var(--radius); font-size:0.92rem; font-family:var(--font-sans); resize:vertical; min-height:90px; background:var(--surface); color:var(--ink);}
-
-  /* ---------- Settings ---------- */
   .status-pill{display:inline-flex; align-items:center; gap:6px; padding:4px 12px; border-radius:100px; font-size:0.8rem; font-weight:600;}
   .status-connected{background:var(--success-tint); color:var(--success);}
   .status-disconnected{background:var(--danger-tint); color:var(--danger);}
   .sql-box{background:var(--ink); color:#E4E1F5; padding:16px; border-radius:var(--radius); font-family:monospace; font-size:0.76rem; white-space:pre; overflow-x:auto; max-height:320px; overflow-y:auto;}
-
-  /* ---------- Print ---------- */
-
-  /* ---------- File viewer popup ---------- */
   .fv-backdrop{position:fixed; inset:0; background:rgba(31,27,58,.62); display:none; align-items:center; justify-content:center; padding:20px; z-index:1000;}
   .fv-backdrop.open{display:flex;}
   .fv-modal{background:var(--surface); border-radius:var(--radius); width:min(960px,100%); height:min(86vh,760px); display:flex; flex-direction:column; box-shadow:0 20px 60px rgba(0,0,0,.35); overflow:hidden;}
@@ -265,8 +227,6 @@
   .fv-msg .fv-ico{font-size:3rem; display:block; margin-bottom:10px;}
   .fv-msg b{color:var(--ink);}
   @media (max-width:600px){ .fv-backdrop{padding:0;} .fv-modal{height:100vh; width:100%; border-radius:0;} .fv-meta{display:none;} }
-
-  /* ---------- Reminder toast ---------- */
   #toast-host{position:fixed; right:18px; bottom:18px; display:flex; flex-direction:column; gap:10px; z-index:1100; max-width:min(360px,calc(100vw - 36px));}
   .toast{background:var(--ink); color:#EFEDFB; border-left:4px solid var(--gold); border-radius:var(--radius); padding:12px 14px; font-size:.86rem; line-height:1.45; box-shadow:0 10px 30px rgba(0,0,0,.3);}
   .toast b{display:block; font-family:var(--font-serif); margin-bottom:2px;}
@@ -291,17 +251,15 @@
     body > *:not(#print-area){display:none !important;}
     #print-area{position:static; left:auto; width:auto;}
   }
-
   :root{--radius:12px;}
   .card,.stat-card{box-shadow:0 6px 24px rgba(8,63,76,.08);}
-  .login-hero{background:linear-gradient(150deg,#2B2380,#4338A8 55%,#D4962A); color:#fff;} .login-hero h1,.login-hero p,.login-hero .eyebrow{color:#fff;}
-  .brand-logo{height:60px; max-width:300px; object-fit:contain; background:#f8f5f547; border-radius:10px; padding:4px; margin-right:10px; vertical-align:middle;} .topbar .brand-logo{height:34px;}
+  .login-hero{color:#fff;} .login-hero h1,.login-hero p,.login-hero .eyebrow{color:#fff;}
+  .brand-logo{height:60px; max-width:300px; object-fit:contain; background:transparent; margin-right:10px; vertical-align:middle;} .topbar .brand-logo{height:40px;}
   .brand-name{font-family:var(--font-serif); font-size:1.6rem; margin:10px 0 2px; color:#fff;} .brand-tag{color:#F6DFA8; font-weight:600;} .brand-details{color:#fff; opacity:.9; font-size:.9rem;}
   .day-chips{display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 16px;} .day-chip{border:1px solid var(--line); background:#fff; border-radius:999px; padding:8px 18px; font-weight:600; cursor:pointer;} .day-chip.on{background:var(--primary); color:#fff; border-color:var(--primary);}
   .today-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important;} .class-btn{min-height:150px; box-shadow:0 4px 14px rgba(0,0,0,.06);} .class-btn .cb-subject{font-size:1.45rem;}
   .pc-row{display:inline-flex; align-items:center; gap:6px; margin:4px 14px 4px 0;} .hm-table{width:100%; border-collapse:separate; border-spacing:4px; text-align:center;} .hm{border-radius:6px; padding:9px 4px; font-size:.8rem; font-weight:600;}
   .risk-row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--line);}
-  /* ---------- clearer visuals ---------- */
   .bar-track{position:relative;} .bar-track::after{content:''; position:absolute; left:75%; top:-2px; bottom:-2px; width:0; border-left:2px dashed var(--gold);}
   .chart-legend{display:flex; gap:16px; flex-wrap:wrap; font-size:.76rem; color:var(--muted); margin:2px 0 12px;}
   .chart-legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:-1px;} .chart-legend i.dash{background:none; border-top:2px dashed var(--gold); height:0; width:16px; border-radius:0; vertical-align:3px;}
@@ -309,15 +267,16 @@
   .plan{font-size:.78rem; line-height:1.4; display:inline-block;} .plan-bad{color:var(--danger);} .plan-good{color:var(--success);}
   .kpi{border-left:4px solid var(--primary);} .kpi.good{border-left-color:var(--success);} .kpi.warn{border-left-color:var(--warning);} .kpi.bad{border-left-color:var(--danger);}
   .risk-row{align-items:center; gap:12px;} .risk-row small{display:block; color:var(--muted); font-size:.72rem;}
-
-
-  /* ================= New theme: deep teal + amber ================= */
   :root{--radius:14px;}
   h1,h2,h3{letter-spacing:-.015em;}
   body{background:radial-gradient(900px 520px at 100% -8%, rgba(67,56,168,.13), transparent 62%), radial-gradient(800px 480px at -8% 108%, rgba(212,150,42,.12), transparent 60%), var(--paper); background-attachment:fixed;}
   .login-hero{position:relative; overflow:hidden; background:radial-gradient(520px 360px at 85% 8%, rgba(212,150,42,.30), transparent 65%), linear-gradient(158deg,#06242E 0%,#0A4654 52%,#13808A 100%);}
   .login-hero::before{content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg, rgba(255,255,255,.055) 0 1px, transparent 1px 44px); pointer-events:none;}
   .login-hero > *{position:relative;}
+  #brand-box{text-align:center;}
+  #brand-box .brand-details{text-align:left;}
+  .login-hero .brand-logo{display:block; height:auto; max-height:170px; width:auto; max-width:min(380px,100%); margin:0 auto 14px; padding:14px 22px; background:#fff; border-radius:16px;}
+  .login-hero .brand-tag{font-size:1.35rem; line-height:1.35; margin:4px 0 0;}
   .login-card{box-shadow:0 18px 50px rgba(8,63,76,.14);}
   .topbar{background:rgba(255,255,255,.86); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom-color:rgba(67,56,168,.14);}
   .sidebar{background:linear-gradient(180deg,#0B3340 0%,#072630 100%); border-right:none; border-bottom:none;}
@@ -342,8 +301,6 @@
   .fp-or::before,.fp-or::after{content:''; flex:1; height:1px; background:var(--line);}
   #fp-btn svg{flex-shrink:0;}
   .fp-forget{display:block; margin:10px auto 0; background:none; border:none; color:var(--muted); font-size:.76rem; text-decoration:underline; cursor:pointer;}
-
-  /* ---- new ambience: warm ivory, deep indigo, saffron accents ---- */
   body{background:radial-gradient(1200px 500px at 85% -10%, rgba(224,160,48,.16), transparent 60%),radial-gradient(900px 500px at -10% 0%, rgba(67,56,168,.12), transparent 55%),var(--paper); background-attachment:fixed;}
   .card,.stat-card{box-shadow:0 1px 2px rgba(31,27,58,.06),0 8px 24px -12px rgba(43,35,128,.18); border-color:var(--line);}
   .topbar{backdrop-filter:blur(8px);}
@@ -353,7 +310,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
-
 <div id="print-area"></div>
 <div id="toast-host" aria-live="polite"></div>
 <div class="fv-backdrop" id="fv-backdrop" aria-hidden="true">
@@ -367,8 +323,6 @@
     <div class="fv-body" id="fv-body"></div>
   </div>
 </div>
-
-
 <header id="topbar" class="topbar">
   <div class="brand">Attendance Management System</div>
   <div class="who-wrap">
@@ -376,17 +330,16 @@
     <button id="logout-btn" class="btn btn-ghost btn-sm">Sign out</button>
   </div>
 </header>
-
 <section id="view-login" class="view active">
   <div class="login-wrap">
     <div class="login-hero">
       <div class="eyebrow">Attendance Management System</div>
-        <div class="ledger-mark">
+      <div class="ledger-mark">
         <div class="ledger-row"><span class="ledger-dot done"></span><span class="ledger-line"></span></div>
         <div class="ledger-row"><span class="ledger-dot done"></span><span class="ledger-line"></span></div>
         <div class="ledger-row"><span class="ledger-dot"></span><span class="ledger-line short"></span></div>
       </div>
-       <p>Developed by Kiran T S,</b>
+      <p>Developed by Kiran T S,</b>
         From Mcom FinTech</p>
     </div>
     <div class="login-form-wrap">
@@ -396,21 +349,18 @@
           <button class="role-tab" data-role="teacher">Teacher</button>
           <button class="role-tab" data-role="admin">Admin</button>
         </div>
-
         <div id="login-panel-student" class="login-panel">
-          <div class="field"><label for="student-reg">Register number</label><input id="student-reg" autocomplete="username" placeholder="e.g. 22CS045"/></div>
+          <div class="field"><label for="student-reg">Register number</label><input id="student-reg" autocomplete="username" placeholder="Register number"/></div>
           <div class="field"><label for="student-pass">Phone number</label><input id="student-pass" type="password" autocomplete="current-password" placeholder="Registered mobile number"/></div>
           <div id="student-login-error" class="field-error" style="display:none"></div>
           <button class="btn btn-primary btn-block" data-login="student">Sign in as student</button>
         </div>
-
         <div id="login-panel-teacher" class="login-panel" style="display:none">
-          <div class="field"><label for="teacher-id-input">Teacher ID</label><input id="teacher-id-input" autocomplete="username" placeholder="e.g. TCH001"/></div>
+          <div class="field"><label for="teacher-id-input">Teacher ID</label><input id="teacher-id-input" autocomplete="username" placeholder="Teacher ID"/></div>
           <div class="field"><label for="teacher-pass">Password</label><input id="teacher-pass" type="password" autocomplete="current-password"/></div>
           <div id="teacher-login-error" class="field-error" style="display:none"></div>
           <button class="btn btn-primary btn-block" data-login="teacher">Sign in as teacher</button>
         </div>
-
         <div id="login-panel-admin" class="login-panel" style="display:none">
           <div id="admin-cred-box">
             <div class="field"><label for="admin-user">Admin username</label><input id="admin-user" autocomplete="username"/></div>
@@ -428,45 +378,36 @@
             <button type="button" class="btn btn-ghost" id="admin-otp-back">Back</button>
           </div>
         </div>
-
         <div id="fp-box" class="fp-box" style="display:none">
           <div class="fp-or"><span>or</span></div>
           <button type="button" class="btn btn-ghost btn-block" id="fp-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 11v3.5c0 2.2-.6 4.2-1.7 6"/><path d="M8.5 14.5c0 2.6-.5 4.4-1.4 6"/><path d="M15.5 12c0 3.4-.4 6-1.5 8.2"/><path d="M5 12a7 7 0 0 1 14 0v1"/><path d="M8.5 8.6A4.5 4.5 0 0 1 16.5 12"/><path d="M3.5 17.5c.9-1.5 1.5-3.4 1.5-5.5"/></svg> Sign in with fingerprint</button>
           <button type="button" class="fp-forget" id="fp-forget">Remove fingerprint from this device</button>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-
 <section id="view-student" class="view">
   <div class="app-shell">
     <nav class="sidebar" id="student-sidebar"></nav>
     <div class="main" id="student-content"></div>
   </div>
 </section>
-
 <section id="view-teacher" class="view">
   <div class="app-shell">
     <nav class="sidebar" id="teacher-sidebar"></nav>
     <div class="main" id="teacher-content"></div>
   </div>
 </section>
-
 <section id="view-admin" class="view">
   <div class="app-shell">
     <nav class="sidebar" id="admin-sidebar"></nav>
     <div class="main" id="admin-content"></div>
   </div>
 </section>
-
 <script>
-/* ============================= DATA LAYER ============================= */
 const DB = { classes:[], teachers:[], subjects:[], students:[], attendance:[], timetable:[], holidays:[], sessions:[], settings:[] };
 const SYNC_TABLES = ['classes','teachers','subjects','students','attendance','timetable','holidays','sessions','settings'];
-
-/* ---------- SECURITY ---------- */
 const ADMIN_EMAIL_DEFAULT = '';   // <-- put the single admin e-mail here (login codes go to it). It can later be changed from Admin > Admin Account.
 const ADMIN_CRED = { u:'Admin', h:'e15734e68ef984d24e5ee2985dae9ac401b054429cf3345e6a5a53642fa330a3' };   // PBKDF2 hash only — no plain password in code
 (function(){
@@ -494,10 +435,77 @@ async function migrateTeacherPasswords(){
   const ch=[]; for(const t of DB.teachers){ if(t.password){ t.passHash=await hashPw(t.password,t.id); t.password=''; ch.push(t); } }
   if(ch.length) syncBulkUpsert('teachers',ch);
 }
-
-
-/* ============================= FIREBASE (FIRESTORE) BACKEND ============================= */
-/* All shared app data lives in Cloud Firestore: one collection per table, one document per record. */
+/* ============================= SECURE ENTRIES (encode / decode) =============================
+   Every holiday / event entry is encrypted with AES-256-GCM before it leaves this device and is decrypted
+   (and integrity-checked) when it is loaded. The database only ever holds scrambled text for the name,
+   type, end date, notes and creator. GCM also detects tampering: each entry is bound to its own id, date
+   and class, so a copied, edited or swapped entry fails the check and is shown with a warning instead of
+   being trusted or silently dropped.
+   NOTE: the key is derived from SEC_SECRET below. Do NOT change it after entries exist, or old entries can
+   no longer be decrypted. */
+const SEC_SECRET = 'JTVSCeJwNYo2P8yHl1DH67jhiQ3_S5tQAJ4lgSNXGXGQYEgv';
+let _secKeyP = null;
+function secKey(){
+  if(!_secKeyP) _secKeyP = (async()=>{
+    const te=new TextEncoder();
+    const base=await crypto.subtle.importKey('raw',te.encode(SEC_SECRET),'PBKDF2',false,['deriveKey']);
+    return crypto.subtle.deriveKey({name:'PBKDF2',hash:'SHA-256',salt:te.encode('atl$entries$v1'),iterations:100000},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);
+  })().catch(e=>{ _secKeyP=null; throw e; });
+  return _secKeyP;
+}
+async function secEncode(obj, aad){
+  const te=new TextEncoder(), iv=crypto.getRandomValues(new Uint8Array(12));
+  const ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:te.encode(aad)},await secKey(),te.encode(JSON.stringify(obj))));
+  const out=new Uint8Array(12+ct.length); out.set(iv); out.set(ct,12);
+  return 'v1.'+fpB64(out);
+}
+async function secDecode(token, aad){
+  if(typeof token!=='string' || token.slice(0,3)!=='v1.') throw new Error('bad format');
+  const raw=fpUn(token.slice(3));
+  const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:raw.slice(0,12),additionalData:new TextEncoder().encode(aad)},await secKey(),raw.slice(12));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+function holKind(r){ return r.kind==='classevent'?'classevent':(r.kind==='leave'?'leave':'holiday'); }
+function holAad(r){ const k=holKind(r); return [r.id, k, k==='classevent'?(r.evDate||r.date||''):(k==='leave'?(r.lvDate||r.date||''):(r.date||'')), k==='leave'?(r.teacherId||''):(r.classId||'')].join('|'); }
+async function encodeHolidayRow(r){
+  if(!r || r._bad) return null;                       // never overwrite an entry that failed verification
+  const kind = holKind(r);
+  const date = String(r.date||r.evDate||'');
+  const wire = {id:r.id, kind, ts:Date.now()};
+  if(kind==='classevent'){ wire.evDate=date; wire.classId=r.classId||''; } else if(kind==='leave'){ wire.lvDate=date; wire.teacherId=r.teacherId||''; } else { wire.date=date; }
+  const payload = {name:String(r.name||''), type:kind==='leave'?'Leave':(r.type==='Holiday'?'Holiday':'Event'), toDate:String(r.toDate||date), details:String(r.details||''),
+    by:r.by||'', byName:r.byName||'', subjectId:r.subjectId||'', teacherId:r.teacherId||'', period:Number(r.period)||0, at:r.at||Date.now()};
+  wire.enc = await secEncode(payload, holAad(wire));
+  return wire;
+}
+async function decodeHolidayRow(row){
+  const kind = holKind(row);
+  const date = kind==='classevent' ? String(row.evDate||'') : (kind==='leave' ? String(row.lvDate||'') : String(row.date||''));
+  if(!row.enc){
+    return {id:row.id, kind, date, toDate:String(row.toDate||date), name:String(row.name||''), type:kind==='leave'?'Leave':(row.type==='Holiday'?'Holiday':'Event'),
+      details:String(row.details||''), by:row.by||'', byName:row.byName||'', classId:row.classId||'', subjectId:row.subjectId||'', teacherId:row.teacherId||'', period:Number(row.period)||0, _plain:true};
+  }
+  try{
+    const p=await secDecode(row.enc, holAad(row));
+    return {id:row.id, kind, date, toDate:p.toDate||date, name:String(p.name||''), type:kind==='leave'?'Leave':(p.type==='Holiday'?'Holiday':'Event'), details:String(p.details||''),
+      by:p.by||'', byName:p.byName||'', classId:row.classId||'', subjectId:p.subjectId||'', teacherId:kind==='leave'?(row.teacherId||''):(p.teacherId||''), period:Number(p.period)||0, at:p.at||0};
+  }catch(e){
+    return {id:row.id, kind, date, toDate:date, name:'⚠ Entry could not be verified (changed outside the app, or the key changed)', type:kind==='leave'?'Leave':'Event', details:'',
+      by:'', byName:'', classId:row.classId||'', subjectId:'', teacherId:kind==='leave'?(row.teacherId||''):'', period:0, _bad:true};
+  }
+}
+async function decodeHolidayRows(rows){ return Promise.all(rows.map(decodeHolidayRow)); }
+async function holMerge(docs){ const seen={}, rows=[]; docs.map(fsDocRow).forEach(r=>{ if(!seen[r.id]){ seen[r.id]=1; rows.push(r); } }); return decodeHolidayRows(rows); }
+async function secureWrites(ws){
+  const out=[];
+  for(const w of ws){
+    if(w && w.v && !w.mask && typeof w.p==='string' && w.p.indexOf('holidays/')===0){
+      const wire = w.v.enc ? w.v : await encodeHolidayRow(w.v);
+      if(wire) out.push({p:w.p, v:wire});
+    } else out.push(w);
+  }
+  return out;
+}
 const DEFAULT_BACKEND = { url:'sakshi-ams', key:'AIzaSyB0_ZJGb_CmOAn_CFXErmHYcqkhAgC2NYk' };
 const ATT_FROM = ''; // Optional lower date bound (YYYY-MM-DD) to reduce attendance downloads.
 const LS_SUPABASE_KEY = 'atl_firestore_cfg_v1';
@@ -586,7 +594,8 @@ async function fsRunQuery(c, collection, where, limit){
 async function fsTable(c,table){
   if(table==='attendance'){ let recs=(await fsRunQuery(c,'attmonth')).map(fsDocRow).flatMap(attDocToRecs); if(ATT_FROM) recs=recs.filter(r=>r.date>=ATT_FROM); return recs; }
   let docs=await fsRunQuery(c,table);
-  return docs.map(fsDocRow);
+  const rows=docs.map(fsDocRow);
+  return table==='holidays' ? await decodeHolidayRows(rows) : rows;
 }
 async function fsGetTableDoc(c,table,id){
   const doc=await fsGet(c,'/'+table+'/'+encodeURIComponent(rtKey(id)));
@@ -612,7 +621,6 @@ async function fetchAttendanceDelta(c){
   const base=DB.attendance.filter(a=>!keys.has(a.studentId+'|'+String(a.date).slice(0,4)+String(a.date).slice(5,7)));
   rows.forEach(r=>attDocToRecs(r).forEach(x=>base.push(x))); ATT_CURSOR=t0; return base;
 }
-/* ---- local cache (IndexedDB): page loads re-read only what changed ---- */
 function idb(){ return new Promise((res,rej)=>{ const r=indexedDB.open('atl_cache',1); r.onupgradeneeded=()=>r.result.createObjectStore('kv'); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
 async function snapLoad(){ try{ const d=await idb(); return await new Promise(res=>{ const q=d.transaction('kv').objectStore('kv').get('snap'); q.onsuccess=()=>res(q.result||null); q.onerror=()=>res(null); }); }catch(e){ return null; } }
 let _snapT;
@@ -625,7 +633,6 @@ function saveSnap(now){
     const d=await idb(); d.transaction('kv','readwrite').objectStore('kv').put({cfg:c.url+'|'+ATT_FROM,rev:rv,attCursor:ATT_CURSOR,data},'snap');
   }catch(e){} },now?0:1500);
 }
-
 /* ============ SCOPED LOADING (keeps Firestore reads low) ============
    - Opening the link reads NOTHING.
    - Student sign-in reads only that student's class data + own attendance (cached on the device afterwards).
@@ -665,13 +672,13 @@ async function loadStudentScope(stu){
   const rev=await getRev(), ck='stu_'+stu.id, cache=await kvGet(ck);
   let S=(cache&&rev&&STU_STATIC.every(t=>rev[t]!==undefined&&cache.rev[t]===rev[t]))?cache.stat:null;
   if(!S){
-    const cut=new Date(Date.now()-180*86400000).toLocaleDateString('en-CA');
-    const [cls,subs,tt,hol,brand,per]=await Promise.all([
+    const cut=new Date(Date.now()-400*86400000).toLocaleDateString('en-CA');
+    const [cls,subs,tt,hol,evs,brand,per]=await Promise.all([
       fetchById('classes',cid), fsRunQuery(c,'subjects',{field:'classId',op:'EQUAL',value:cid}), fsRunQuery(c,'timetable',{field:'classId',op:'EQUAL',value:cid}),
-      fsRunQuery(c,'holidays',{field:'date',op:'GREATER_THAN_OR_EQUAL',value:cut},60), fetchById('settings','brand'), fetchById('settings','periods') ]);
+      fsRunQuery(c,'holidays',{field:'date',op:'GREATER_THAN_OR_EQUAL',value:cut}), fsRunQuery(c,'holidays',{field:'classId',op:'EQUAL',value:cid}), fetchById('settings','brand'), fetchById('settings','periods') ]);
     const subjects=subs.map(fsDocRow), tids=Array.from(new Set(subjects.map(x=>x.teacherId).filter(Boolean)));
     const teachers=(await Promise.all(tids.map(id=>fetchById('teachers',id)))).filter(Boolean).map(t=>({id:t.id,teacherId:'',name:t.name}));   // names only
-    S={classes:cls?[cls]:[],subjects,timetable:tt.map(fsDocRow),holidays:hol.map(fsDocRow),settings:[brand,per].filter(Boolean),teachers};
+    S={classes:cls?[cls]:[],subjects,timetable:tt.map(fsDocRow),holidays:await holMerge(hol.concat(evs)),settings:[brand,per].filter(Boolean),teachers};
   }
   let att=(cache&&rev&&rev.attendance!==undefined&&cache.rev.attendance===rev.attendance&&cache.att)?cache.att:null;
   if(!att) att=(await fsRunQuery(c,'attmonth',{field:'studentId',op:'EQUAL',value:stu.id})).map(fsDocRow).flatMap(attDocToRecs);
@@ -725,6 +732,7 @@ async function pushWrites(writes,tables){
   const c=getSupabaseCfg(); if(!writes.length) return true;
   writes=mergeMasked(writes);
   try{
+    writes=await secureWrites(writes);
     const rev=revWrite(c,tables), chunks=chunkWrites(writes);
     if(chunks.length===1) await fsPost(c,':commit',{writes:chunks[0].map(w=>fsCommitWrite(c,w)).concat([{update:{name:fsDocPath(c,rev.p),fields:fsValueDocFields(rev.fields)},updateMask:{fieldPaths:Object.keys(rev.fields)}}])});
     else { for(const chunk of chunks) await fsPost(c,':commit',{writes:chunk.map(w=>fsCommitWrite(c,w))}); await fsPost(c,':commit',{writes:[{update:{name:fsDocPath(c,rev.p),fields:fsValueDocFields(rev.fields)},updateMask:{fieldPaths:Object.keys(rev.fields)}}]}); }
@@ -765,9 +773,6 @@ async function pollRev(){
   catch(e){console.error(e);}finally{POLL_BUSY=false;}
 }
 async function testSupabaseConnection(projectId,key){
-  // This app uses the Firestore REST API and its own app login. It does not
-  // send a Firebase Auth ID token, so the connection test must match the
-  // allow-list rules that do not require request.auth.
   try{
     const c={url:projectId,key};
     await fsRequest(c,'GET','/meta?pageSize=1');
@@ -785,7 +790,6 @@ async function testSupabaseConnection(projectId,key){
     return {ok:false,msg:detail+' — '+hint};
   }
 }
-
 const monthsData = [];   // built from real attendance dates + the current month
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 function rebuildMonths(){
@@ -806,18 +810,14 @@ const PERIOD_TIMES = {
 };
 function todayStr(){ return new Date().toLocaleDateString('en-CA'); }
 function todayDayName(){ return JS_DAY_TO_NAME[new Date().getDay()]; }
-
-/* ============================= HELPERS ============================= */
 function $(sel, ctx){ return (ctx||document).querySelector(sel); }
 function $all(sel, ctx){ return Array.from((ctx||document).querySelectorAll(sel)); }
 function uid(prefix){ const a=new Uint32Array(2); crypto.getRandomValues(a); return prefix + (a[0].toString(36)+a[1].toString(36)).slice(0,10); }
-
 function statusFor(pct){
   if(pct>=85) return {cls:'success', label:'Good', color:'var(--success)'};
   if(pct>=75) return {cls:'warning', label:'Watch', color:'var(--warning)'};
   return {cls:'danger', label:'Critical', color:'var(--danger)'};
 }
-
 function subjectStatsForStudent(studentId, subjectId){
   const recs = DB.attendance.filter(a=>a.studentId===studentId && a.subjectId===subjectId);
   const held = recs.length;
@@ -825,7 +825,6 @@ function subjectStatsForStudent(studentId, subjectId){
   const pct = held ? Math.round((present/held)*1000)/10 : 0;
   return {held, present, absent:held-present, pct};
 }
-
 function overallStatsForStudent(studentId){
   const student = DB.students.find(s=>s.id===studentId);
   const subjects = DB.subjects.filter(su=>su.classId===student.classId);
@@ -834,7 +833,6 @@ function overallStatsForStudent(studentId){
   const pct = held ? Math.round((present/held)*1000)/10 : 0;
   return {held, present, absent:held-present, pct, subjects};
 }
-
 function monthlyTrendForStudent(studentId){
   const student = DB.students.find(s=>s.id===studentId);
   const subjectIds = DB.subjects.filter(su=>su.classId===student.classId).map(s=>s.id);
@@ -845,14 +843,12 @@ function monthlyTrendForStudent(studentId){
     return {name:m.name, pct: held ? Math.round((present/held)*100) : 0};
   });
 }
-
 function subjectOverallStats(subjectId){
   const recs = DB.attendance.filter(a=>a.subjectId===subjectId);
   const held = recs.length;
   const present = recs.filter(r=>r.status==='P').length;
   return {held, present, absent:held-present, pct: held ? Math.round((present/held)*1000)/10 : 0};
 }
-
 function classOverallStats(classId){
   const studentIds = DB.students.filter(s=>s.classId===classId).map(s=>s.id);
   const recs = DB.attendance.filter(a=>studentIds.includes(a.studentId));
@@ -860,24 +856,19 @@ function classOverallStats(classId){
   const present = recs.filter(r=>r.status==='P').length;
   return {held, present, pct: held ? Math.round((present/held)*1000)/10 : 0};
 }
-
 function overallStatsAll(){
   const held = DB.attendance.length;
   const present = DB.attendance.filter(r=>r.status==='P').length;
   return {held, present, pct: held ? Math.round((present/held)*1000)/10 : 0};
 }
-
-/* ---- clearer visuals: shared helpers ---- */
 const CLR = {good:'#2F6F4E', watch:'#B8860B', bad:'#A33636', brand:'#4338A8', gold:'#D4962A', grid:'#E6E1D3'};
 function clrFor(p){ return p>=85?CLR.good:(p>=75?CLR.watch:CLR.bad); }
-/* draws a dashed "75% required" guide on Chart.js bar/line charts */
 const targetLine = {id:'targetLine', afterDatasetsDraw(ch, a, o){
   if(!o || o.value==null) return; const {ctx, chartArea:ca, scales} = ch, horiz = ch.options.indexAxis==='y';
   const px = (horiz?scales.x:scales.y).getPixelForValue(o.value); ctx.save(); ctx.setLineDash([6,4]); ctx.strokeStyle=CLR.gold; ctx.lineWidth=2; ctx.beginPath();
   if(horiz){ ctx.moveTo(px,ca.top); ctx.lineTo(px,ca.bottom); } else { ctx.moveTo(ca.left,px); ctx.lineTo(ca.right,px); }
   ctx.stroke(); ctx.fillStyle=CLR.gold; ctx.font='600 11px DM Sans, sans-serif';
   if(horiz) ctx.fillText('75% required', px+4, ca.top+11); else ctx.fillText('75% required', ca.right-72, px-5); ctx.restore(); }};
-/* what should this student do about a subject? */
 function planText(held, present){
   if(!held) return '<span class="sub">No classes yet</span>';
   const p = present/held;
@@ -886,14 +877,12 @@ function planText(held, present){
   return '<span class="plan plan-good">'+(can>0?'Can miss <b>'+can+'</b> more class'+(can>1?'es':''):'Do not miss the next class')+' and stay above 75%</span>';
 }
 function legendHtml(){ return '<div class="chart-legend"><span><i style="background:'+CLR.good+'"></i>Good ≥85%</span><span><i style="background:'+CLR.watch+'"></i>Watch 75–84%</span><span><i style="background:'+CLR.bad+'"></i>Critical &lt;75%</span><span><i class="dash"></i>75% required</span></div>'; }
-
 function barListHtml(items){
   return '<div class="bar-list">' + items.map(it=>{
     const info = statusFor(it.pct);
     return '<div class="bar-row"><span class="bar-label">'+it.label+'</span><div class="bar-track"><div class="bar-fill" style="width:'+it.pct+'%;background:'+info.color+'"></div></div><span class="bar-pct">'+it.pct+'%</span></div>';
   }).join('') + '</div>';
 }
-
 function donutHtml(pct, presentLabel, absentLabel){
   const info = statusFor(pct);
   return '<div class="donut-wrap">'
@@ -903,18 +892,15 @@ function donutHtml(pct, presentLabel, absentLabel){
     + '<div><span class="dot" style="background:var(--line)"></span>'+absentLabel+'</div>'
     + '</div></div>';
 }
-
 function trendHtml(trend){
   return '<div class="trend">' + trend.map(m=>
     '<div class="trend-col"><div class="trend-bar-wrap"><div class="trend-bar" style="height:'+m.pct+'px"></div></div><span class="trend-pct">'+m.pct+'%</span><span class="trend-label">'+m.name.slice(0,3)+'</span></div>'
   ).join('') + '</div>';
 }
-
 function monthMeta(prefix){
   const parts = prefix.split('-');
   return {year:Number(parts[0]), month:Number(parts[1])};
 }
-
 function daysInMonthList(prefix){
   const {year, month} = monthMeta(prefix);
   const numDays = new Date(year, month, 0).getDate();
@@ -922,12 +908,46 @@ function daysInMonthList(prefix){
   for(let d=1; d<=numDays; d++) out.push(prefix+'-'+String(d).padStart(2,'0'));
   return out;
 }
-
-function holidaysOn(dateStr){ return DB.holidays.filter(h=>h.date===dateStr); }
-function holidayNoteHtml(dateStr){
-  return holidaysOn(dateStr).map(h=>'<div class="notice notice-warning" style="margin-bottom:12px;"><b>'+escapeHtml(h.type)+' · '+escapeHtml(h.name)+'</b></div>').join('');
+function instHolidays(){ return DB.holidays.filter(h=>h.kind!=='classevent' && h.kind!=='leave'); }
+function leavesAll(){ return DB.holidays.filter(h=>h.kind==='leave'); }
+const LEAVE_TYPES = ['Casual leave','Sick leave','Earned leave','Duty leave','Maternity / Paternity leave','Other leave'];
+function leaveOn(teacherId, dateStr){ return leavesAll().find(l=>l.teacherId===teacherId && !l._bad && dateStr>=l.date && dateStr<=hEnd(l)); }
+function leaveOverlap(teacherId, d, exceptId){ return leavesAll().find(l=>l.id!==exceptId && l.teacherId===teacherId && !l._bad && d.date<=hEnd(l) && d.toDate>=l.date); }
+function leaveRowHtml(l, extra, showTeacher){
+  const t=DB.teachers.find(x=>x.id===l.teacherId), bad=!!l._bad;
+  return '<div class="holiday-row" style="flex-wrap:wrap;gap:6px 0;"><span class="holiday-date" style="min-width:200px;">'+escapeHtml(rangeLabel(l))+'</span>'
+    + '<span class="holiday-name"><b>'+escapeHtml(showTeacher?(t?t.name:(l.byName||'Teacher')):l.name)+'</b><div class="sub" style="margin-top:2px;">'+escapeHtml(showTeacher?l.name:'')+'</div>'
+    + (l.details?'<div class="sub" style="margin-top:2px;">'+escapeHtml(l.details)+'</div>':'')+(l.byName&&l.by&&l.by!=='T:'+l.teacherId?'<div class="sub" style="margin-top:2px;">Entered by '+escapeHtml(l.byName)+'</div>':'')+'</span>'
+    + '<span class="badge badge-'+(bad?'danger':'warning')+'">'+(bad?'Check':'Leave')+'</span>'+(extra||'')+'</div>';
 }
-/* dayStatusFn(dateStr) should return null (no class held) or {held, present, pct} */
+function leaveNoticeHtml(teacher){
+  const t=todayStr(), cur=leaveOn(teacher.id,t);
+  if(cur) return '<div class="notice notice-warning"><b>You are on leave today</b> · '+escapeHtml(cur.name)+' — '+escapeHtml(rangeLabel(cur))+'</div>';
+  const next=leavesAll().filter(l=>l.teacherId===teacher.id && !l._bad && l.date>t).sort((a,b)=>a.date<b.date?-1:1)[0];
+  return next?'<div class="notice"><b>Next leave</b> · '+escapeHtml(next.name)+' — '+escapeHtml(rangeLabel(next))+'</div>':'';
+}
+function classEventsAll(){ return DB.holidays.filter(h=>h.kind==='classevent'); }
+function hEnd(h){ return (h.toDate && h.toDate>=h.date) ? h.toDate : h.date; }
+function dayCount(h){ return Math.round((new Date(hEnd(h)+'T00:00:00')-new Date(h.date+'T00:00:00'))/86400000)+1; }
+function rangeLabel(h){ return h.date===hEnd(h) ? h.date : h.date+' → '+hEnd(h)+' ('+dayCount(h)+' days)'; }
+function evVisible(e){
+  if(state.role==='admin') return true;
+  if(state.role==='teacher') return e.teacherId===state.teacherId;
+  if(state.role==='student'){ const s=DB.students.find(x=>x.id===state.studentId); return !!s && e.classId===s.classId; }
+  return false;
+}
+function evLabel(e){ const su=DB.subjects.find(x=>x.id===e.subjectId); return e.name+' (instead of '+(su?su.name:'class')+', period '+e.period+')'; }
+function classEventFor(subjectId, date, period){ return classEventsAll().find(e=>e.subjectId===subjectId && e.date===date && Number(e.period)===Number(period)); }
+function holidaysOn(dateStr, instOnly){
+  const out=instHolidays().filter(h=>dateStr>=h.date && dateStr<=hEnd(h));
+  if(!instOnly) classEventsAll().filter(e=>e.date===dateStr && evVisible(e)).forEach(e=>out.push(Object.assign({},e,{type:'Event', name:evLabel(e), short:e.name})));
+  return out;
+}
+function holidayNoteHtml(dateStr){
+  return holidaysOn(dateStr).map(h=>'<div class="notice notice-warning" style="margin-bottom:12px;"><b>'+escapeHtml(h.type)+' · '+escapeHtml(h.name)+'</b>'
+    +(h.kind!=='classevent' && h.date!==hEnd(h)?' <span>('+escapeHtml(rangeLabel(h))+')</span>':'')
+    +(h.details?'<div style="margin-top:4px;">'+escapeHtml(h.details)+'</div>':'')+'</div>').join('');
+}
 function calendarHtml(prefix, dayStatusFn, selectedDate){
   const {year, month} = monthMeta(prefix);
   const first = new Date(year, month-1, 1);
@@ -952,7 +972,7 @@ function calendarHtml(prefix, dayStatusFn, selectedDate){
       cells += '<button type="button" class="'+cls+'" data-caldate="'+dateStr+'"'+(hTitle?' title="'+escapeHtml(hTitle)+'"':'')+'><span class="cal-daynum">'+d+'</span>'+label+'</button>';
     } else if(h0){
       cls += ' '+hCls+' cal-clickable'+(dateStr===selectedDate?' cal-selected':'');
-      cells += '<button type="button" class="'+cls+'" data-caldate="'+dateStr+'" title="'+escapeHtml(hTitle)+'"><span class="cal-daynum">'+d+'</span><span class="cal-hname">'+escapeHtml(h0.name)+'</span></button>';
+      cells += '<button type="button" class="'+cls+'" data-caldate="'+dateStr+'" title="'+escapeHtml(hTitle)+'"><span class="cal-daynum">'+d+'</span><span class="cal-hname">'+escapeHtml(h0.short||h0.name)+'</span></button>';
     } else {
       cells += '<div class="cal-cell cal-none"><span class="cal-daynum">'+d+'</span></div>';
     }
@@ -966,7 +986,6 @@ function calendarHtml(prefix, dayStatusFn, selectedDate){
     + '<div><span class="dot" style="background:var(--line)"></span>No class held</div>'
     + '</div><div class="cal-grid" style="margin-top:12px;">' + cells + '</div>';
 }
-
 function downloadCSV(filename, rows){
   const csv = rows.map(r=>r.map(cell=>{
     const s = String(cell===undefined || cell===null ? '' : cell);
@@ -979,16 +998,12 @@ function downloadCSV(filename, rows){
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
-
 function printReport(html){
   $('#print-area').innerHTML = html;
   window.print();
 }
-
-/* ============================= CLASS NOTES / CONTENT ============================= */
 function sessionKey(subjectId, date, period){ return 'SESS_'+subjectId+'_'+date+'_'+period; }
 function getSession(subjectId, date, period){ return DB.sessions.find(s=>s.id===sessionKey(subjectId,date,period)); }
-
 /* Class-note files are stored in their own 'sessionfiles' collection, split into ~700 KB text chunks
    (a Firestore document is limited to 1 MB). The session row only keeps name/size/fid/chunks, so loading
    the class list stays fast; students download the chunks on demand. */
@@ -1016,7 +1031,6 @@ async function saveSession(subjectId, classId, teacherId, date, period, topics, 
   if(BACKEND_ON()) return (await syncUpsert('sessions', rec)) !== false;
   return 'local';
 }
-/* ---- Removing shared content (whole entry, or a single file) ---- */
 async function deleteSessionFileChunks(files){
   if(!BACKEND_ON()) return;
   const c = getSupabaseCfg(), w = [];
@@ -1061,8 +1075,6 @@ document.addEventListener('click', async e=>{
     if(await removeSessionEntry(rs.dataset.rmsession)) refreshAfterRemove(); else rs.disabled = false;
   }
 });
-
-/* ---- File viewer popup: opens teacher-shared files on the same page, with a Download button ---- */
 const FILE_REG = [];                                   // chips refer to files by index into this list
 function dataUrlToBlob(full, nameHint){
   const comma = full.indexOf(',');
@@ -1171,7 +1183,6 @@ document.addEventListener('click', e=>{
   }
 });
 document.addEventListener('keydown', e=>{ if(e.key==='Escape' && $('#fv-backdrop').classList.contains('open')) closeFileViewer(); });
-
 const MAX_FILE_BYTES = 2 * 1024 * 1024; // 2MB per file (stored as chunks in Firestore)
 function readFilesAsDataUrls(fileList){
   const files = Array.from(fileList || []);
@@ -1188,8 +1199,6 @@ function readFilesAsDataUrls(fileList){
     oversized: oversized.map(f=>f.name)
   }));
 }
-
-/* rm (optional): {sid:'<session id>'} adds a remove button to each saved file, {draft:true} to files not yet uploaded */
 function fileChipListHtml(files, rm){
   if(!files || !files.length) return '';
   return '<div class="file-chip-list">' + files.map((f,i)=>{
@@ -1203,9 +1212,6 @@ function fileChipListHtml(files, rm){
     return rm ? '<span style="display:inline-flex;gap:4px;align-items:center;">'+chip+'</span>' : chip;
   }).join('') + '</div>';
 }
-
-
-/* ============================= CONTACT DETAILS (email / phone) ============================= */
 const EMAIL_RE = /^[a-z0-9._%+\-]{1,64}@[a-z0-9\-]+(\.[a-z0-9\-]+)*\.[a-z]{2,}$/i;
 function normEmail(v){ return String(v||'').trim().toLowerCase(); }
 function validEmail(v){ return v.length<=254 && EMAIL_RE.test(v) && !/\.\./.test(v); }
@@ -1222,7 +1228,6 @@ function contactCellHtml(t){
   const ph = t.phone ? '<a href="tel:'+escapeHtml(t.phone)+'">'+escapeHtml(t.phone)+'</a>' : '<span class="muted">No phone</span>';
   return '<div class="contact-line">'+e+'<br>'+ph+'</div>';
 }
-/* validates and normalises contact fields; returns {error} or {email, phone} */
 function readContact(emailEl, phoneEl, selfId, requireEmail){
   const email = normEmail(emailEl.value), phone = normPhone(phoneEl.value);
   if(requireEmail && !email) return {error:'Email is required — attendance confirmations are sent there.'};
@@ -1231,8 +1236,6 @@ function readContact(emailEl, phoneEl, selfId, requireEmail){
   if(email && DB.teachers.some(t=>t.id!==selfId && normEmail(t.email)===email)) return {error:'Another teacher already uses this email.'};
   return {email, phone: phoneEl.value.trim() ? phone : ''};
 }
-
-/* ---- toast (used for short confirmations) ---- */
 function showToast(title, body){
   const host = $('#toast-host'); if(!host) return;
   const d = document.createElement('div'); d.className = 'toast'; d.setAttribute('role','status');
@@ -1241,7 +1244,6 @@ function showToast(title, body){
   const x = document.createElement('button'); x.type = 'button'; x.textContent = 'Dismiss'; x.onclick = ()=>d.remove();
   d.append(b, m, x); host.appendChild(d); setTimeout(()=>d.remove(), 120000);
 }
-
 function teacherProfileCardHtml(t){
   return '<div class="card" id="profile-card"><h3>My contact</h3>'
     + '<p class="sub" style="margin-bottom:12px;">Attendance confirmations are emailed to you here. Changing these details needs your password.</p>'
@@ -1266,10 +1268,7 @@ function bindTeacherProfile(t){
     $('#p-pass').value=''; msg('Saved.', true);
   });
 }
-
-/* ============================= TIMETABLE HELPERS ============================= */
 function timetableEntry(classId, day, period){ return DB.timetable.find(t=>t.classId===classId && t.day===day && t.period===period); }
-
 function teacherTodayClasses(teacher){
   const day = todayDayName();
   if(WEEKDAYS.indexOf(day)===-1) return []; // Sunday — no classes
@@ -1278,8 +1277,6 @@ function teacherTodayClasses(teacher){
     .filter(tt=> tt.day===day && subjectIds.has(tt.subjectId))
     .sort((a,b)=>a.period-b.period);
 }
-
-/* ---- settings, periods, branding ---- */
 function getSetting(id, def){ const r = DB.settings.find(s=>s.id===id); if(!r) return def; if(r.value!==null && typeof r.value==='object') return r.value; /* Firestore loader already parsed it */ try{ return JSON.parse(r.value); }catch(e){ return def; } }
 function setSetting(id, val){ let r = DB.settings.find(s=>s.id===id); if(!r){ r = {id, value:''}; DB.settings.push(r); } r.value = JSON.stringify(val); syncUpsert('settings', r); }
 function applyPeriodConfig(){
@@ -1287,15 +1284,25 @@ function applyPeriodConfig(){
   PERIODS.length = 0; Object.keys(PERIOD_TIMES).forEach(k=>delete PERIOD_TIMES[k]);
   list.forEach((p,i)=>{ PERIODS.push(i+1); PERIOD_TIMES[i+1] = p.s+' – '+p.e; });
 }
+const _logoCache={};
+function cleanLogo(src){ return _logoCache[src]||(_logoCache[src]=new Promise(res=>{ const im=new Image(); im.onload=()=>{ try{ const c=document.createElement('canvas'); c.width=im.width; c.height=im.height; const x=c.getContext('2d'); x.drawImage(im,0,0); const d=x.getImageData(0,0,c.width,c.height), p=d.data; let kept=0;
+  for(let i=0;i<p.length;i+=4){ const a=p[i+3]/255, r=p[i]*a, g=p[i+1]*a, b=p[i+2]*a, mx=Math.max(r,g,b), mn=Math.min(r,g,b);
+    if(mx<10){ p[i+3]=0; continue; }
+    kept++;
+    if(mx-mn<45){ p[i]=p[i+1]=p[i+2]=0; p[i+3]=Math.round(mx); }
+    else{ p[i]=Math.min(255,r*255/mx); p[i+1]=Math.min(255,g*255/mx); p[i+2]=Math.min(255,b*255/mx); p[i+3]=Math.min(255,Math.round(mx*1.15)); } }
+  if(kept<p.length/400){ res(src); return; }
+  x.putImageData(d,0,0); res(c.toDataURL('image/png')); }catch(e){ res(src); } }; im.onerror=()=>res(src); im.src=src; })); }
 function applyBrand(){
-  const b = getSetting('brand', {}), nm = escapeHtml(b.name || 'Attendance Ledger');
+  const b = getSetting('brand', {}), nm = escapeHtml(b.tagline || b.name || 'Attendance Ledger');
   const logo = b.logo ? '<img src="'+b.logo+'" class="brand-logo" alt="">' : '';
   $('#topbar .brand').innerHTML = logo+'<span>'+nm+'</span>';
-  const hero = $('.login-hero'); if(!hero) return;
+  const hero = $('.login-hero'); if(!hero){ return; }
   let bx = $('#brand-box'); if(!bx){ bx = document.createElement('div'); bx.id = 'brand-box'; hero.insertBefore(bx, hero.firstChild); }
-  bx.innerHTML = (b.name||b.logo||b.tagline||b.details) ? logo+(b.name?'<h2 class="brand-name">'+nm+'</h2>':'')+(b.tagline?'<div class="brand-tag">'+escapeHtml(b.tagline)+'</div>':'')+(b.details?'<p class="brand-details">'+escapeHtml(b.details).replace(/\n/g,'<br>')+'</p>':'') : '';
+  bx.innerHTML = (b.name||b.logo||b.tagline||b.details) ? logo+((b.tagline||b.name)?'<div class="brand-tag">'+nm+'</div>':'')+(b.details?'<p class="brand-details">'+escapeHtml(b.details).replace(/\n/g,'<br>')+'</p>':'') : '';
+  if(b.logo) document.querySelectorAll('.brand-logo').forEach(im=>cleanLogo(b.logo).then(u=>{ im.src=u; }));
 }
-function readLogo(file, cb){ const r = new FileReader(); r.onload = ()=>{ const im = new Image(); im.onload = ()=>{ const s = Math.min(1, 240/Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width*s); c.height = Math.round(im.height*s); c.getContext('2d').drawImage(im,0,0,c.width,c.height); cb(c.toDataURL('image/png')); }; im.src = r.result; }; r.readAsDataURL(file); }
+function readLogo(file, cb){ const r = new FileReader(); r.onload = ()=>{ const im = new Image(); im.onload = ()=>{ const s = Math.min(1, 600/Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width*s); c.height = Math.round(im.height*s); c.getContext('2d').drawImage(im,0,0,c.width,c.height); cb(c.toDataURL('image/png')); }; im.src = r.result; }; r.readAsDataURL(file); }
 function dateForDay(day){ const d = new Date(); d.setDate(d.getDate() - (d.getDay()+6)%7 + WEEKDAYS.indexOf(day)); return d.toLocaleDateString('en-CA'); }
 function teacherClassesOn(teacher, day){
   const ids = new Set(DB.subjects.filter(su=>su.teacherId===teacher.id).map(s=>s.id));
@@ -1340,8 +1347,6 @@ function bindPeriodEditor(onChange){
     setPeriodDraft(st.map((x,i)=>[x,en[i]])); onChange();
   });
 }
-
-/* ============================= APP STATE ============================= */
 const state = {
   role:null, studentId:null, teacherId:null,
   studentTab:'dashboard', teacherTab:'dashboard', adminTab:'overview',
@@ -1357,24 +1362,17 @@ const state = {
   adminTimetableClass:null, holidayForm:null, ttDraft:{}, ttSaved:null, ttF:{classId:'all',day:'all',period:'all',mine:false}, tF:{q:'',status:'all',classId:'all'},
   sessionDraft:{topics:null, files:[]}
 };
-
-/* ============================= LOGIN / NAV ============================= */
 function populateLoginSelects(){
-  // No-op: sign-in is by typed register number / teacher ID, so the full
-  // roster is never listed or exposed on the login page.
 }
-
 function showLoginError(role, msg){
   const el = $('#'+role+'-login-error');
   if(!el) return;
   if(!msg){ el.style.display='none'; el.textContent=''; }
   else { el.style.display='block'; el.textContent=msg; }
 }
-
 function clearLoginErrors(){
   ['student','teacher','admin'].forEach(r=>showLoginError(r, ''));
 }
-
 function bindLoginEvents(){
   $all('.role-tab').forEach(tab=>tab.addEventListener('click', ()=>{
     $all('.role-tab').forEach(t=>t.classList.remove('active'));
@@ -1390,7 +1388,6 @@ function bindLoginEvents(){
   $('#admin-otp').addEventListener('keydown', e=>{ if(e.key==='Enter') verifyAdminOtp(); });
   $('#logout-btn').addEventListener('click', logout);
 }
-
 async function login(role){
   const btn=document.querySelector('[data-login="'+role+'"]'); if(btn){ btn.disabled=true; }
   try{ await loginInner(role); }
@@ -1400,7 +1397,6 @@ async function login(role){
 async function loginInner(role){
   showLoginError(role, '');
   if(lockLeft()){ showLoginError(role,'Too many attempts. Try again in '+Math.ceil(lockLeft()/60000)+' min.'); return; }
-
   if(role==='student'){
     const reg = $('#student-reg').value.trim();
     const dob = $('#student-pass').value.trim();
@@ -1443,17 +1439,13 @@ async function loginInner(role){
       showAdminOtp(A.email);
       return;
     }
-    // No admin e-mail configured yet (first run) or no database: password-only, and the admin is sent to set the e-mail.
     await finishAdminLogin(!A.email);
     return;
   }
-
   await bootData();
   await fpOffer();
   enterApp();
 }
-
-/* ---------- Admin account + e-mail one-time codes (OTP) ---------- */
 function adminAccount(){
   const s = getSetting('adminAcct', {}) || {};
   return {user:s.user||ADMIN_CRED.u, h:s.h||ADMIN_CRED.h, email:normEmail(s.email||ADMIN_EMAIL_DEFAULT)};
@@ -1521,10 +1513,6 @@ async function resendAdminOtp(){
   catch(e){ showLoginError('admin','Could not resend ('+e.message+').'); }
   finally{ setTimeout(()=>{ b.disabled=false; },30000); }
 }
-
-/* ---------- Fingerprint (device biometric) sign-in ---------- */
-// Uses the phone's own fingerprint sensor (WebAuthn). The fingerprint never leaves the device.
-// true = fingerprint works only in the installed app; false = also in a normal browser tab.
 const FP_APP_ONLY = true;
 const FP_KEY='atl_fp', FP_NO='atl_fp_no';
 function fpList(){ try{ return JSON.parse(localStorage.getItem(FP_KEY)||'[]'); }catch(e){ return []; } }
@@ -1543,7 +1531,6 @@ function fpWho(){
   if(state.role==='admin') return {role:'admin',key:'admin',name:'Administrator'};
   return null;
 }
-// After a normal password sign-in, offers to enrol this device's fingerprint (once per person per device).
 async function fpOffer(){
   try{
     if(!(await fpAvailable())) return;
@@ -1626,7 +1613,6 @@ function logout(ev){
   clearLoginErrors();
   fpRefresh();
 }
-
 function updateTopbarWho(){
   let label = '';
   if(state.role==='student'){ const s=DB.students.find(x=>x.id===state.studentId); label = s.name+' · Student'; }
@@ -1634,7 +1620,6 @@ function updateTopbarWho(){
   if(state.role==='admin') label = 'Administrator';
   $('#topbar-who').textContent = label;
 }
-
 function enterApp(){
   $all('.view').forEach(v=>v.classList.remove('active'));
   $('#view-'+state.role).classList.add('active');
@@ -1644,8 +1629,6 @@ function enterApp(){
   if(state.role==='teacher'){ renderTeacherSidebar(); renderTeacherContent(); }
   if(state.role==='admin'){ renderAdminSidebar(); renderAdminContent(); }
 }
-
-/* ============================= STUDENT DASHBOARD ============================= */
 function renderStudentSidebar(){
   const student = DB.students.find(s=>s.id===state.studentId);
   const tabs = [['dashboard','Dashboard'],['timetable','My Timetable'],['calendar','Attendance Calendar'],['content','My Content'],['holidays','Academic Calendar']];
@@ -1657,7 +1640,6 @@ function renderStudentSidebar(){
     renderStudentContent();
   }));
 }
-
 function renderStudentContent(){
   rebuildMonths();
   if(state.studentTab==='calendar') return renderStudentCalendar();
@@ -1666,7 +1648,6 @@ function renderStudentContent(){
   if(state.studentTab==='holidays') return renderHolidayListView('student');
   return renderStudentDashboard();
 }
-
 function renderStudentTimetable(){
   const student = DB.students.find(s=>s.id===state.studentId);
   const cls = DB.classes.find(c=>c.id===student.classId);
@@ -1674,7 +1655,6 @@ function renderStudentTimetable(){
   html += '<div class="card" style="overflow-x:auto;">' + timetableGridHtml(student.classId, null) + '</div>';
   $('#student-content').innerHTML = html;
 }
-
 function renderStudentContentTab(){
   if(BACKEND_ON() && !STU_SESS_LOADED){
     $('#student-content').innerHTML='<div class="card"><p class="sub">Loading your class content…</p></div>';
@@ -1689,7 +1669,6 @@ function renderStudentContentTab(){
   const sel = state.contentSubject && subjectIds.has(state.contentSubject) ? state.contentSubject : 'all';
   const sessions = sel==='all' ? all : all.filter(s=>s.subjectId===sel);
   const cnt = id=>all.filter(s=>s.subjectId===id).length;
-
   let html = '<div class="page-head"><div><h1>My Content</h1><div class="sub">Topics covered and files shared by your faculty, newest first. Updates automatically.</div></div></div>';
   html += '<div class="day-chips"><button class="day-chip '+(sel==='all'?'on':'')+'" data-csub="all">All subjects ('+all.length+')</button>'
     + subjects.map(su=>'<button class="day-chip '+(sel===su.id?'on':'')+'" data-csub="'+su.id+'">'+escapeHtml(su.name)+' ('+cnt(su.id)+')</button>').join('')+'</div>';
@@ -1710,41 +1689,51 @@ function renderStudentContentTab(){
   $('#student-content').innerHTML = html;
   $all('[data-csub]').forEach(b=>b.addEventListener('click', ()=>{ state.contentSubject = b.dataset.csub; renderStudentContentTab(); }));
 }
-
 function escapeHtml(str){
   return String(str).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-
-/* ---- holidays & events shown on student + teacher dashboards ---- */
 function upcomingHolidays(days){
   const t=todayStr(), e=new Date(); e.setDate(e.getDate()+days);
-  const end=e.toLocaleDateString('en-CA');
-  return DB.holidays.filter(h=>h.date>=t && h.date<=end).sort((a,b)=>a.date<b.date?-1:1);
+  const end=e.toLocaleDateString('en-CA'), out=[];
+  instHolidays().forEach(h=>{ if(hEnd(h)>=t && h.date<=end) out.push(h); });
+  classEventsAll().forEach(ev=>{ if(ev.date>=t && ev.date<=end && evVisible(ev)) out.push(Object.assign({},ev,{type:'Event', name:evLabel(ev)})); });
+  return out.sort((a,b)=>a.date<b.date?-1:(a.date>b.date?1:0));
 }
 function daysAway(d){
   const n=Math.round((new Date(d+'T00:00:00')-new Date(todayStr()+'T00:00:00'))/86400000);
-  return n===0?'Today':n===1?'Tomorrow':'in '+n+' days';
+  return n<0?'Ongoing':n===0?'Today':n===1?'Tomorrow':'in '+n+' days';
 }
 function holidayTodayHtml(){
-  return DB.holidays.filter(h=>h.date===todayStr()).map(h=>'<div class="notice notice-warning"><b>Today · '+escapeHtml(h.name)+'</b> ('+escapeHtml(h.type)+')</div>').join('');
+  return holidaysOn(todayStr()).map(h=>'<div class="notice notice-warning"><b>Today · '+escapeHtml(h.name)+'</b> ('+escapeHtml(h.type)+')'
+    +(h.kind!=='classevent' && h.date!==hEnd(h)?' · '+escapeHtml(rangeLabel(h)):'')+(h.details?'<div style="margin-top:4px;">'+escapeHtml(h.details)+'</div>':'')+'</div>').join('');
 }
 function holidayUpcomingHtml(){
   const list=upcomingHolidays(45);
   return '<div class="card"><h3>Upcoming holidays &amp; events</h3>'
-    + (list.length ? list.slice(0,6).map(h=>'<div class="holiday-row"><span class="holiday-date">'+h.date+'</span><span class="holiday-name">'+escapeHtml(h.name)+'</span><span class="badge badge-'+(h.type==='Holiday'?'danger':'warning')+'">'+escapeHtml(h.type)+'</span><span class="sub">'+daysAway(h.date)+'</span></div>').join('')
+    + (list.length ? list.slice(0,6).map(h=>'<div class="holiday-row" style="flex-wrap:wrap;gap:4px 0;"><span class="holiday-date" style="min-width:170px;">'+escapeHtml(h.kind==='classevent'?h.date:rangeLabel(h))+'</span><span class="holiday-name">'+escapeHtml(h.name)+'</span><span class="badge badge-'+(h.type==='Holiday'?'danger':'warning')+'">'+escapeHtml(h.type)+'</span><span class="sub" style="margin-left:10px;">'+daysAway(h.date)+'</span></div>').join('')
       : '<p class="empty">No holidays or events in the next 45 days.</p>')
     + '</div>';
 }
-
+function holRowHtml(h, extra){
+  const bad=!!h._bad;
+  return '<div class="holiday-row" style="flex-wrap:wrap;gap:6px 0;"><span class="holiday-date" style="min-width:200px;">'+escapeHtml(rangeLabel(h))+'</span>'
+    + '<span class="holiday-name"><b>'+escapeHtml(h.name)+'</b>'+(h.details?'<div class="sub" style="margin-top:2px;">'+escapeHtml(h.details)+'</div>':'')+(h.byName?'<div class="sub" style="margin-top:2px;">Added by '+escapeHtml(h.byName)+'</div>':'')+'</span>'
+    + '<span class="badge badge-'+(bad?'danger':(h.type==='Holiday'?'danger':'warning'))+'">'+escapeHtml(bad?'Check':h.type)+'</span>'+(extra||'')+'</div>';
+}
+function evRowHtml(e, extra, showTeacher){
+  const su=DB.subjects.find(x=>x.id===e.subjectId), t=DB.teachers.find(x=>x.id===e.teacherId), c=DB.classes.find(x=>x.id===e.classId);
+  return '<div class="holiday-row" style="flex-wrap:wrap;gap:6px 0;"><span class="holiday-date" style="min-width:150px;">'+escapeHtml(e.date)+'<div class="sub">Period '+escapeHtml(e.period)+'</div></span>'
+    + '<span class="holiday-name"><b>'+escapeHtml(e.name)+'</b><div class="sub" style="margin-top:2px;">Instead of '+escapeHtml(su?su.name:'a class')+(c?' · '+escapeHtml(clsLabel(c)):'')+(showTeacher?' · '+escapeHtml(t?t.name:(e.byName||'faculty')):'')+'</div>'
+    + (e.details?'<div class="sub" style="margin-top:2px;">'+escapeHtml(e.details)+'</div>':'')+'</span><span class="badge badge-warning">Event</span>'+(extra||'')+'</div>';
+}
 function renderHolidayListView(role){
-  const list = DB.holidays.slice().sort((a,b)=> a.date<b.date?-1:1);
-  let html = '<div class="page-head"><div><h1>Academic Calendar</h1><div class="sub">Institution holidays and events.</div></div></div>';
-  html += '<div class="card">' + (list.length
-    ? list.map(h=>'<div class="holiday-row"><span class="holiday-date">'+h.date+'</span><span class="holiday-name">'+h.name+'</span><span class="badge badge-'+(h.type==='Holiday'?'danger':'warning')+'">'+h.type+'</span></div>').join('')
-    : '<p class="empty">No holidays have been added yet.</p>') + '</div>';
+  const list = instHolidays().sort((a,b)=> a.date<b.date?-1:(a.date>b.date?1:0));
+  const evs = classEventsAll().filter(evVisible).sort((a,b)=> a.date<b.date?-1:(a.date>b.date?1:a.period-b.period));
+  let html = '<div class="page-head"><div><h1>Academic Calendar</h1><div class="sub">Institution holidays and events (date ranges shown as From → To).</div></div></div>';
+  html += '<div class="card">' + (list.length ? list.map(h=>holRowHtml(h)).join('') : '<p class="empty">No holidays have been added yet.</p>') + '</div>';
+  if(evs.length) html += '<div class="card"><h3>Events held instead of a class</h3>' + evs.map(e=>evRowHtml(e,'',role!=='teacher')).join('') + '</div>';
   $('#'+role+'-content').innerHTML = html;
 }
-
 /* Renders a Mon–Sat × period timetable grid for a class.
    onCellClick(day, period, entry) — if provided, cells become clickable (used by admin editor via renderAdminTimetable itself). */
 function timetableGridHtml(classId, highlightTeacherId, opts){
@@ -1772,7 +1761,6 @@ function timetableGridHtml(classId, highlightTeacherId, opts){
   });
   return '<table class="tt-table">'+rows+'</table>';
 }
-
 function renderStudentDashboard(){
   const student = DB.students.find(s=>s.id===state.studentId);
   const cls = DB.classes.find(c=>c.id===student.classId);
@@ -1780,28 +1768,22 @@ function renderStudentDashboard(){
   const trend = monthlyTrendForStudent(student.id);
   const info = statusFor(overall.pct);
   const lowSubjects = overall.subjects.filter(su=>subjectStatsForStudent(student.id, su.id).pct < 75);
-
   let html = '<div class="page-head"><div><h1>'+student.name+'</h1><div class="sub">Register no. '+student.regNo+' · '+cls.course+' · Semester '+cls.semester+' · Section '+cls.section+'</div></div><span class="badge badge-'+info.cls+'">'+info.label+'</span></div>';
-
   if(lowSubjects.length){
     html += '<div class="notice notice-warning">Attendance shortage: '+lowSubjects.map(s=>s.name).join(', ')+' '+(lowSubjects.length>1?'are':'is')+' below the 75% requirement.</div>';
   }
   html += holidayTodayHtml() + holidayUpcomingHtml();
-
   html += '<div class="stat-grid">'
     + '<div class="stat-card"><div class="num">'+overall.pct+'%</div><div class="label">Overall attendance</div></div>'
     + '<div class="stat-card"><div class="num">'+overall.subjects.length+'</div><div class="label">Subjects enrolled</div></div>'
     + '<div class="stat-card"><div class="num">'+overall.held+'</div><div class="label">Classes held</div></div>'
     + '<div class="stat-card"><div class="num">'+overall.present+'</div><div class="label">Classes attended</div></div>'
     + '</div>';
-
   html += '<div class="grid-2">'
     + '<div class="card"><h3>Overall attendance</h3><p class="chart-note">Share of all your classes you attended. You need at least 75%.</p>' + donutHtml(overall.pct, 'Present · '+overall.present+' classes', 'Absent · '+overall.absent+' classes') + '</div>'
     + '<div class="card"><h3>Month-by-month trend</h3><p class="chart-note">Is your attendance getting better or worse?</p>' + cv('ch-trend',190) + '</div>'
     + '</div>';
-
   html += '<div class="card"><h3>Which subjects need attention?</h3><p class="chart-note">Each bar is one subject. The dashed line is the 75% you need.</p>' + legendHtml() + cv('ch-stu', Math.max(150, overall.subjects.length*44+40)) + '</div>';
-
   html += '<div class="card"><h3>Subject-wise details</h3><table class="table"><thead><tr><th>Subject</th><th>Held</th><th>Present</th><th>Absent</th><th>Percentage</th><th>What to do</th></tr></thead><tbody>'
     + overall.subjects.map(su=>{
         const st = subjectStatsForStudent(student.id, su.id);
@@ -1811,7 +1793,6 @@ function renderStudentDashboard(){
           + '<td>'+planText(st.held, st.present)+'</td></tr>';
       }).join('')
     + '</tbody></table></div>';
-
   $('#student-content').innerHTML = html;
   if(!window.Chart){ return; }
   new Chart($('#ch-trend'), {type:'line', data:{labels:trend.map(m=>m.name.slice(0,3)), datasets:[{label:'Attendance %', data:trend.map(m=>m.pct), borderColor:CLR.brand, backgroundColor:'rgba(67,56,168,.12)', fill:true, tension:.3, pointRadius:5, pointBackgroundColor:trend.map(m=>clrFor(m.pct))}]},
@@ -1820,37 +1801,30 @@ function renderStudentDashboard(){
   new Chart($('#ch-stu'), {type:'bar', data:{labels:subs.map(su=>su.name), datasets:[{label:'Attendance %', data:pcs, backgroundColor:pcs.map(clrFor), borderRadius:4, barThickness:22}]},
     options:{indexAxis:'y', maintainAspectRatio:false, plugins:{legend:{display:false}, targetLine:{value:75}, tooltip:{callbacks:{label:c=>c.parsed.x+'% attendance'}}}, scales:{x:{min:0,max:100,ticks:{callback:v=>v+'%'}, grid:{color:CLR.grid}}, y:{grid:{display:false}}}}, plugins:[targetLine]});
 }
-
 function studentDayStats(studentId, dateStr){
   const recs = DB.attendance.filter(a=>a.studentId===studentId && a.date===dateStr);
   if(!recs.length) return null;
   const present = recs.filter(r=>r.status==='P').length;
   return {held:recs.length, present, absent:recs.length-present, pct:Math.round((present/recs.length)*1000)/10, recs};
 }
-
 function renderStudentCalendar(){
   const student = DB.students.find(s=>s.id===state.studentId);
   if(!state.studentCalMonth) state.studentCalMonth = monthsData[monthsData.length-1].prefix;
   const m = state.studentCalMonth;
-
   let html = '<div class="page-head"><div><h1>Calendar</h1><div class="sub">Day-by-day attendance for '+student.name+'.</div></div></div>';
   html += '<div class="card"><div class="cal-toolbar"><div class="field" style="margin:0;min-width:180px;"><label>Month</label><select id="scal-month">'
     + monthsData.map(mo=>'<option value="'+mo.prefix+'" '+(mo.prefix===m?'selected':'')+'>'+mo.name+' '+mo.prefix.slice(0,4)+'</option>').join('')
     + '</select></div></div>'
     + calendarHtml(m, d=>studentDayStats(student.id, d), state.studentCalDate)
     + '</div>';
-
   html += '<div class="card" id="scal-detail">' + studentCalDetailHtml(student, state.studentCalDate) + '</div>';
-
   $('#student-content').innerHTML = html;
-
   $('#scal-month').addEventListener('change', e=>{ state.studentCalMonth = e.target.value; state.studentCalDate=null; renderStudentCalendar(); });
   $all('[data-caldate]').forEach(btn=>btn.addEventListener('click', ()=>{
     state.studentCalDate = btn.dataset.caldate;
     renderStudentCalendar();
   }));
 }
-
 function studentCalDetailHtml(student, dateStr){
   if(!dateStr) return '<h3>Select a day</h3><p class="sub">Click any coloured day above to see that day\'s subject-wise attendance.</p>';
   const day = studentDayStats(student.id, dateStr);
@@ -1862,11 +1836,9 @@ function studentCalDetailHtml(student, dateStr){
           + '<span class="badge badge-'+(r.status==='P'?'success':'danger')+'">'+(r.status==='P'?'Present':'Absent')+'</span></div>';
       }).join('') + '</div>';
 }
-
-/* ============================= TEACHER DASHBOARD ============================= */
 function renderTeacherSidebar(){
   const teacher = DB.teachers.find(t=>t.id===state.teacherId);
-  const tabs = [['dashboard','Dashboard'],['timetable','My Timetable'],['mark','Mark attendance'],['calendar','Calendar'],['records','Attendance records'],['content','My Content'],['reports','Reports'],['holidays','Academic Calendar'],['profile','My Contact']];
+  const tabs = [['dashboard','Dashboard'],['timetable','My Timetable'],['mark','Mark attendance'],['calendar','Calendar'],['records','Attendance records'],['content','My Content'],['reports','Reports'],['holidays','Academic Calendar'],['myhol','My Leave / Event'],['profile','My Contact']];
   $('#teacher-sidebar').innerHTML = '<div class="side-title">'+escapeHtml(teacher.name)+'</div><div class="side-sub">'+escapeHtml(teacher.teacherId)+'</div>'
     + tabs.map(t=>'<button class="sidebar-link '+(state.teacherTab===t[0]?'active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>').join('');
   $all('#teacher-sidebar .sidebar-link').forEach(btn=>btn.addEventListener('click', ()=>{
@@ -1875,7 +1847,6 @@ function renderTeacherSidebar(){
     renderTeacherContent();
   }));
 }
-
 function renderTeacherContent(){
   rebuildMonths();
   const teacher = DB.teachers.find(t=>t.id===state.teacherId);
@@ -1887,9 +1858,9 @@ function renderTeacherContent(){
   if(state.teacherTab==='content') return renderTeacherContentTab(teacher);
   if(state.teacherTab==='reports') return renderTeacherReports(teacher);
   if(state.teacherTab==='holidays') return renderHolidayListView('teacher');
+  if(state.teacherTab==='myhol') return renderTeacherHolidays(teacher);
   if(state.teacherTab==='profile') return renderTeacherProfile(teacher);
 }
-
 function openClassFromButton(subjectId, period, date){
   state.teacherTab = 'mark';
   state.markSubject = subjectId;
@@ -1900,22 +1871,25 @@ function openClassFromButton(subjectId, period, date){
   renderTeacherSidebar();
   renderTeacherContent();
 }
-
 function renderTeacherDashboard(teacher){
   const subjects = DB.subjects.filter(su=>su.teacherId===teacher.id);
   const classIds = new Set(subjects.map(s=>s.classId));
   let html = '<div class="page-head"><div><h1>Welcome back, '+escapeHtml(teacher.name.split(' ')[0])+'</h1><div class="sub">'+subjects.length+' subjects · '+classIds.size+' classes</div></div></div>';
   html += holidayTodayHtml();
-
+  html += leaveNoticeHtml(teacher);
   const day = state.teacherDay || (WEEKDAYS.indexOf(todayDayName())>-1 ? todayDayName() : 'Mon'), dDate = dateForDay(day);
   html += '<div class="card"><h3>My classes · '+day+' ('+dDate+')</h3><div class="day-chips">'
     + WEEKDAYS.map(d=>'<button class="day-chip '+(d===day?'on':'')+'" data-day="'+d+'">'+d+(d===todayDayName()?' ●':'')+' ('+teacherClassesOn(teacher,d).length+')</button>').join('')+'</div>';
+  html += instHolidays().filter(h=>dDate>=h.date && dDate<=hEnd(h)).map(h=>'<div class="notice notice-warning" style="margin:10px 0;"><b>'+escapeHtml(h.type)+' · '+escapeHtml(h.name)+'</b> — '+escapeHtml(rangeLabel(h))+'</div>').join('');
+  const lvD = leaveOn(teacher.id, dDate); if(lvD) html += '<div class="notice notice-warning" style="margin:10px 0;"><b>You are on leave</b> · '+escapeHtml(lvD.name)+' — '+escapeHtml(rangeLabel(lvD))+'</div>';
   const today = teacherClassesOn(teacher, day);
   if(!today.length){ html += '<p class="empty">No classes on '+day+'.</p>'; }
   else {
     html += '<div class="today-grid">' + today.map(tt=>{
       const su = DB.subjects.find(x=>x.id===tt.subjectId), cls = DB.classes.find(x=>x.id===tt.classId);
       const already = DB.attendance.some(a=>a.subjectId===tt.subjectId && a.date===dDate && a.period===tt.period);
+      const evx = classEventFor(tt.subjectId, dDate, tt.period);
+      if(evx) return '<div class="class-btn" style="border-color:#2F6FA3;background:#E3EEF7;cursor:default;"><span class="cb-time" style="color:#2F6FA3;">Period '+tt.period+' · '+(PERIOD_TIMES[tt.period]||'')+'</span><span class="cb-subject">'+escapeHtml(evx.name)+'</span><span class="cb-meta">Event instead of '+(su?escapeHtml(su.name):'class')+' · '+(cls?cls.course+' S'+cls.semester+'-'+cls.section:'')+'</span></div>';
       return '<button class="class-btn '+(already?'cb-done':'')+'" data-open-subject="'+tt.subjectId+'" data-open-period="'+tt.period+'" data-open-date="'+dDate+'">'
         + '<span class="cb-time">Period '+tt.period+' · '+(PERIOD_TIMES[tt.period]||'')+'</span>'
         + '<span class="cb-subject">'+(su?escapeHtml(su.name):'—')+'</span>'
@@ -1924,11 +1898,9 @@ function renderTeacherDashboard(teacher){
   }
   html += '</div>';
   html += holidayUpcomingHtml();
-
   const clsDayCount = d=>teacherClassesOn(teacher, d).length;
   const clsWeekCount = WEEKDAYS.reduce((n,d)=>n+clsDayCount(d),0);
   const clsTodayCount = WEEKDAYS.indexOf(todayDayName())>-1 ? clsDayCount(todayDayName()) : 0;
-  /* classes held = distinct (subject, date, period) sessions with attendance recorded, up to today */
   const heldSet = new Set(), heldBySub = {}, tdy = todayStr(), mySubIds = new Set(subjects.map(x=>x.id));
   DB.attendance.forEach(a=>{ if(mySubIds.has(a.subjectId) && a.date<=tdy){ const k=a.subjectId+'|'+a.date+'|'+a.period; if(!heldSet.has(k)){ heldSet.add(k); heldBySub[a.subjectId]=(heldBySub[a.subjectId]||0)+1; } } });
   html += '<div class="stat-grid">'
@@ -1940,7 +1912,6 @@ function renderTeacherDashboard(teacher){
     + '<div class="stat-card"><div class="num">'+DB.students.filter(s=>subjects.some(su=>su.classId===s.classId)).length+'</div><div class="label">Students taught</div></div>'
     + '<div class="stat-card"><div class="num">'+DB.attendance.filter(a=>a.teacherId===teacher.id).length+'</div><div class="label">Attendance entries logged</div></div>'
     + '</div>';
-
   html += '<div class="card"><h3>My subjects</h3><table class="table"><thead><tr><th>Code</th><th>Subject</th><th>Class</th><th>Classes held</th><th>Average attendance</th></tr></thead><tbody>'
     + subjects.map(su=>{
         const cls = DB.classes.find(c=>c.id===su.classId);
@@ -1949,21 +1920,18 @@ function renderTeacherDashboard(teacher){
         return '<tr><td>'+escapeHtml(su.code)+'</td><td>'+escapeHtml(su.name)+'</td><td>'+cls.course+' S'+cls.semester+'-'+cls.section+'</td><td>'+(heldBySub[su.id]||0)+'</td><td><span class="badge badge-'+info.cls+'">'+stats.pct+'%</span></td></tr>';
       }).join('') || '<tr><td colspan="5" class="empty">No subjects assigned yet.</td></tr>'
     + '</tbody></table></div>';
-
   $('#teacher-content').innerHTML = html;
   $all('[data-open-subject]').forEach(btn=>btn.addEventListener('click', ()=>{
     openClassFromButton(btn.dataset.openSubject, Number(btn.dataset.openPeriod), btn.dataset.openDate);
   }));
   $all('.day-chip').forEach(b=>b.addEventListener('click', ()=>{ state.teacherDay = b.dataset.day; renderTeacherDashboard(teacher); }));
 }
-
 function renderTeacherProfile(teacher){
   const html = '<div class="page-head"><div><h1>My Contact</h1><div class="sub">Update your email and phone number. Your name, ID and subjects are managed by the administrator.</div></div></div>'
     + teacherProfileCardHtml(teacher);
   $('#teacher-content').innerHTML = html;
   bindTeacherProfile(teacher);
 }
-
 function renderTeacherTimetable(teacher){
   const subjects = DB.subjects.filter(su=>su.teacherId===teacher.id);
   const classIds = Array.from(new Set(subjects.map(s=>s.classId)));
@@ -1988,13 +1956,11 @@ function renderTeacherTimetable(teacher){
   $('#ttf-period').addEventListener('change',e=>{ f.period=e.target.value; renderTeacherTimetable(teacher); });
   $('#ttf-mine').addEventListener('change',e=>{ f.mine=e.target.value==='1'; renderTeacherTimetable(teacher); });
 }
-
 function renderTeacherContentTab(teacher){
   const subjects = DB.subjects.filter(su=>su.teacherId===teacher.id);
   const subjectIds = new Set(subjects.map(s=>s.id));
   const sessions = DB.sessions.filter(s=>subjectIds.has(s.subjectId) && (s.topics || (s.files&&s.files.length)))
     .slice().sort((a,b)=> a.date<b.date?1:-1);
-
   let html = '<div class="page-head"><div><h1>My Content</h1><div class="sub">Class notes and files you\'ve shared, visible to your students. Edit any entry from Mark attendance.</div></div></div>';
   if(!sessions.length){
     html += '<div class="card"><p class="empty">Nothing logged yet. After marking attendance, use the "Class notes" box to add topics covered and files.</p></div>';
@@ -2021,29 +1987,23 @@ function renderTeacherContentTab(teacher){
     renderTeacherContent();
   }));
 }
-
 function renderTeacherMark(teacher){
   const subjects = DB.subjects.filter(su=>su.teacherId===teacher.id);
   if(!state.markSubject || !subjects.find(s=>s.id===state.markSubject)) state.markSubject = subjects[0] ? subjects[0].id : null;
-
   let html = '<div class="page-head"><div><h1>Mark attendance</h1><div class="sub">Select a subject, date and period, then record who attended.</div></div></div>';
-
   if(!subjects.length){
     html += '<div class="card"><p class="empty">No subjects are assigned to you yet.</p></div>';
     $('#teacher-content').innerHTML = html;
     return;
   }
-
   html += holidayNoteHtml(state.markDate);
   html += '<div class="card"><div class="form-row">'
     + '<div class="field"><label>Subject</label><select id="mark-subject">' + subjects.map(su=>'<option value="'+su.id+'" '+(su.id===state.markSubject?'selected':'')+'>'+escapeHtml(su.name)+'</option>').join('') + '</select></div>'
     + '<div class="field"><label>Date</label><input type="date" id="mark-date" value="'+state.markDate+'"/></div>'
     + '<div class="field"><label>Period</label><select id="mark-period">' + PERIODS.map(p=>'<option value="'+p+'" '+(p===state.markPeriod?'selected':'')+'>Period '+p+' · '+PERIOD_TIMES[p]+'</option>').join('') + '</select></div>'
     + '</div><button class="btn btn-ghost" id="load-students-btn">Load class list</button></div>';
-
   const subject = DB.subjects.find(s=>s.id===state.markSubject);
   const students = DB.students.filter(s=>s.classId===subject.classId);
-
   if(state.markLoaded){
     html += '<div class="card"><div class="mark-toolbar"><h3>'+subject.name+' · '+students.length+' students</h3><button class="btn btn-ghost btn-sm" id="mark-all-present">Mark all present</button></div>'
       + '<table class="table"><thead><tr><th>Reg. no.</th><th>Student</th><th>Status</th></tr></thead><tbody>'
@@ -2056,8 +2016,6 @@ function renderTeacherMark(teacher){
         }).join('')
       + '</tbody></table><button class="btn btn-primary" id="save-attendance-btn" style="margin-top:16px;">Save attendance</button><span id="save-confirm" class="save-confirm"></span></div>';
   }
-
-  // Class notes: topics covered + files, saved against this exact subject/date/period, visible to students.
   {
     const existingSession = getSession(state.markSubject, state.markDate, state.markPeriod);
     const draftTopics = state.sessionDraft.topics!==null ? state.sessionDraft.topics : ((existingSession && existingSession.topics) || '');
@@ -2072,9 +2030,7 @@ function renderTeacherMark(teacher){
       + '<span id="session-confirm" class="save-confirm"></span></div>'
       + '</div>';
   }
-
   $('#teacher-content').innerHTML = html;
-
   $('#mark-subject').addEventListener('change', e=>{ state.markSubject=e.target.value; state.markLoaded=false; state.markDraft={}; state.sessionDraft={topics:null,files:[]}; renderTeacherMark(teacher); });
   $('#mark-date').addEventListener('change', e=>{ state.markDate=e.target.value; state.sessionDraft={topics:null,files:[]}; renderTeacherMark(teacher); });
   $('#mark-period').addEventListener('change', e=>{ state.markPeriod=Number(e.target.value); state.sessionDraft={topics:null,files:[]}; renderTeacherMark(teacher); });
@@ -2084,7 +2040,6 @@ function renderTeacherMark(teacher){
     students.forEach(s=>state.markDraft[s.id]='P');
     renderTeacherMark(teacher);
   });
-
   if(state.markLoaded){
     $all('.toggle-group').forEach(group=>{
       group.addEventListener('click', e=>{
@@ -2101,6 +2056,10 @@ function renderTeacherMark(teacher){
     $('#save-attendance-btn').addEventListener('click', async ()=>{
       const date = state.markDate || todayStr();
       const period = state.markPeriod || 1;
+      const hol0 = holidaysOn(date,true).filter(h=>h.type==='Holiday')[0], ev0 = classEventFor(state.markSubject,date,period);
+      if(ev0 && !confirm('You recorded the event "'+ev0.name+'" instead of this class ('+date+', period '+period+'). Save attendance anyway?')) return;
+      if(hol0 && !confirm(date+' is a holiday ('+hol0.name+'). Save attendance anyway?')) return;
+      const lv0 = leaveOn(teacher.id, date); if(lv0 && !confirm('You are on leave on '+date+' ('+lv0.name+'). Save attendance anyway?')) return;
       const touched = []; let newCount = 0;
       Object.entries(state.markDraft).forEach(([studentId, status])=>{
         const existing = DB.attendance.find(a=>a.studentId===studentId && a.subjectId===state.markSubject && a.date===date && a.period===period);
@@ -2121,7 +2080,6 @@ function renderTeacherMark(teacher){
       if(m3) m3.textContent = 'Saved '+n+' records for '+date+'. ' + (mr.status==='queued' ? 'Confirmation emailed to '+mr.to+'.' : mr.status==='noemail' ? 'No email address on file for the teacher, so no confirmation was sent.' : 'Confirmation email could not be queued - check the database rules.');
     });
   }
-
   $('#session-topics').addEventListener('input', e=>{ state.sessionDraft.topics = e.target.value; });
   $('#session-files').addEventListener('change', e=>{
     $('#session-confirm').textContent = 'Reading files…';
@@ -2148,7 +2106,156 @@ function renderTeacherMark(teacher){
     const m2 = $('#session-confirm'); if(m2) m2.textContent = 'Saved - students can see it now.';
   });
 }
-
+function holValidate(d){
+  const ymd=/^\d{4}-\d{2}-\d{2}$/;
+  if(!d.name) return 'Enter a name for the holiday / event.';
+  if(d.name.length>80) return 'The name is too long (80 characters max).';
+  if(!ymd.test(d.date) || isNaN(new Date(d.date+'T00:00:00'))) return 'Choose a valid From date.';
+  if(!ymd.test(d.toDate) || isNaN(new Date(d.toDate+'T00:00:00'))) return 'Choose a valid To date.';
+  if(d.toDate<d.date) return 'The To date cannot be before the From date.';
+  if(dayCount(d)>366) return 'A holiday / event can cover at most 366 days.';
+  if(String(d.details||'').length>300) return 'The notes are too long (300 characters max).';
+  return '';
+}
+function holDuplicate(d, exceptId){ return instHolidays().find(h=>h.id!==exceptId && String(h.name).trim().toLowerCase()===d.name.toLowerCase() && h.date===d.date && hEnd(h)===d.toDate); }
+async function holVerify(rec){
+  if(!BACKEND_ON()) return true;
+  try{
+    const row=await fetchById('holidays',rec.id); if(!row) return false;
+    const d=await decodeHolidayRow(row);
+    return !d._bad && d.name===rec.name && d.date===rec.date && (d.toDate||d.date)===(rec.toDate||rec.date) && (d.details||'')===(rec.details||'') && Number(d.period||0)===Number(rec.period||0);
+  }catch(e){ return false; }
+}
+async function holCommit(rec){
+  const i=DB.holidays.findIndex(h=>h.id===rec.id), prev=i>=0?DB.holidays[i]:null;
+  if(i>=0) DB.holidays[i]=rec; else DB.holidays.push(rec);
+  if(!BACKEND_ON()) return {ok:true, verified:false, local:true};
+  const ok=await syncUpsert('holidays',rec);
+  if(ok===false){ if(prev){ const j=DB.holidays.findIndex(h=>h.id===rec.id); if(j>=0) DB.holidays[j]=prev; } else DB.holidays=DB.holidays.filter(h=>h.id!==rec.id); return {ok:false}; }
+  return {ok:true, verified:await holVerify(rec)};
+}
+async function holRemove(id){
+  const prev=DB.holidays.find(h=>h.id===id); if(!prev) return true;
+  DB.holidays=DB.holidays.filter(h=>h.id!==id);
+  if(!BACKEND_ON()) return true;
+  const ok=await syncDelete('holidays',id);
+  let still=null; if(ok!==false){ try{ still=await fetchById('holidays',id); }catch(e){} }
+  if(ok===false || still){ DB.holidays.push(prev); return false; }
+  return true;
+}
+const TH = {form:null, ev:null, flash:null};
+const EVENT_IDEAS = ['Seminar','Workshop','Guest lecture','Exam duty','Department meeting','Field trip','Cultural event','Sports day','Training / FDP','Other'];
+function thEmptyForm(){ const t=todayStr(); return {id:'', name:LEAVE_TYPES[0], date:t, toDate:t, details:''}; }
+function thEmptyEv(){ return {editId:'', date:todayStr(), subjectId:'', periods:[], title:'', details:''}; }
+function renderTeacherHolidays(teacher){
+  const subjects=DB.subjects.filter(su=>su.teacherId===teacher.id), me='T:'+teacher.id;
+  if(!TH.form) TH.form=thEmptyForm();
+  if(!TH.ev) TH.ev=thEmptyEv();
+  const f=TH.form, e=TH.ev, lock=!!e.editId;
+  if(!e.subjectId || !subjects.find(s=>s.id===e.subjectId)) e.subjectId = subjects[0] ? subjects[0].id : '';
+  const su=subjects.find(s=>s.id===e.subjectId), dayName=JS_DAY_TO_NAME[new Date(e.date+'T00:00:00').getDay()];
+  const sched=p=>!!(su && (timetableEntry(su.classId,dayName,p)||{}).subjectId===su.id);
+  const mineH=leavesAll().filter(h=>h.teacherId===teacher.id).sort((a,b)=>a.date<b.date?1:(a.date>b.date?-1:0));
+  const mineE=classEventsAll().filter(x=>x.teacherId===teacher.id).sort((a,b)=>a.date<b.date?1:(a.date>b.date?-1:b.period-a.period));
+  let html='<div class="page-head"><div><h1>My Leave / Event</h1><div class="sub">Enter the dates you will be on leave (holiday), or record an event that replaces one of your classes. The admin sees every entry. Entries are stored encrypted and checked after saving.</div></div></div>';
+  if(TH.flash){ html+='<div class="card"><div class="form-msg '+(TH.flash.ok?'ok':'err')+'" style="margin:0;">'+escapeHtml(TH.flash.t)+'</div></div>'; TH.flash=null; }
+  html+=leaveNoticeHtml(teacher);
+  html+='<div class="card"><h3>'+(f.id?'Edit leave':'My leave / holiday')+'</h3>'
+    +'<p class="sub" style="margin:6px 0 12px;">Choose the dates you will be away. For one day, set the same date in From and To.</p>'
+    +'<div class="form-grid">'
+    +'<div class="field"><label>Leave type</label><select id="th-type">'+LEAVE_TYPES.map(g=>'<option '+(g===f.name?'selected':'')+'>'+g+'</option>').join('')+'</select></div>'
+    +'<div class="field"><label>From date</label><input id="th-from" type="date" value="'+escapeHtml(f.date)+'"/></div>'
+    +'<div class="field"><label>To date</label><input id="th-to" type="date" value="'+escapeHtml(f.toDate)+'"/></div>'
+    +'</div><div class="field"><label>Reason (optional)</label><textarea id="th-notes" maxlength="300" style="min-height:60px;">'+escapeHtml(f.details)+'</textarea></div>'
+    +'<div class="btn-row"><button class="btn btn-primary" id="th-save">'+(f.id?'Save changes':'Save leave')+'</button>'+(f.id?'<button class="btn btn-ghost" id="th-cancel">Cancel</button>':'')+'</div>'
+    +'<div class="form-msg" id="th-msg" role="alert"></div></div>';
+  html+='<div class="card"><h3>'+(lock?'Edit event':'Event instead of a class')+'</h3>'
+    +'<p class="sub" style="margin:6px 0 12px;">Use this when a period is used for something other than the class (seminar, exam duty, meeting…). Students of that class see the event in their calendar'+(lock?'. To change the date or period, delete this entry and add it again':'')+'.</p>'
+    +(subjects.length?'<div class="form-grid">'
+      +'<div class="field"><label>Date</label><input id="te-date" type="date" value="'+escapeHtml(e.date)+'" '+(lock?'disabled':'')+'/></div>'
+      +'<div class="field"><label>Class / subject it replaces</label><select id="te-subject" '+(lock?'disabled':'')+'>'+subjects.map(s=>{ const c=DB.classes.find(x=>x.id===s.classId); return '<option value="'+escapeHtml(s.id)+'" '+(s.id===e.subjectId?'selected':'')+'>'+escapeHtml(s.name)+(c?' — '+escapeHtml(clsLabel(c)):'')+'</option>'; }).join('')+'</select></div>'
+      +'<div class="field"><label>Event name</label><input id="te-title" list="ev-ideas" maxlength="80" value="'+escapeHtml(e.title)+'" placeholder="e.g. Guest lecture"/><datalist id="ev-ideas">'+EVENT_IDEAS.map(x=>'<option value="'+x+'">').join('')+'</datalist></div>'
+      +'</div>'
+      +'<div class="field"><label>Period(s) used for the event</label><div>'+PERIODS.map(p=>'<label style="display:inline-flex;gap:6px;align-items:center;margin:0 14px 8px 0;color:var(--ink);"><input type="checkbox" data-per="'+p+'" '+(e.periods.includes(p)?'checked':'')+' '+(lock?'disabled':'')+' style="width:auto;"/> P'+p+' <span class="sub">'+escapeHtml(PERIOD_TIMES[p]||'')+(sched(p)?' · scheduled':'')+'</span></label>').join('')+'</div>'
+      +(lock?'':'<button type="button" class="btn btn-ghost btn-sm" id="te-sched">Tick my scheduled periods</button>')+'</div>'
+      +'<div class="field"><label>Details (optional)</label><textarea id="te-details" maxlength="300" style="min-height:60px;">'+escapeHtml(e.details)+'</textarea></div>'
+      +'<div class="btn-row"><button class="btn btn-primary" id="te-save">'+(lock?'Save changes':'Save event')+'</button>'+(lock?'<button class="btn btn-ghost" id="te-cancel">Cancel</button>':'')+'</div>'
+      :'<p class="empty">No subjects are assigned to you yet.</p>')
+    +'<div class="form-msg" id="te-msg" role="alert"></div></div>';
+  html+='<div class="card"><h3>My leave</h3>'+(mineH.length?mineH.map(h=>leaveRowHtml(h,(h.by===me&&!h._bad?'<span class="btn-row" style="margin-left:10px;"><button class="btn btn-ghost btn-sm" data-th-edit="'+escapeHtml(h.id)+'">Edit</button><button class="btn btn-danger btn-sm" data-th-del="'+escapeHtml(h.id)+'">Delete</button></span>':(h._bad?'<span class="btn-row" style="margin-left:10px;"><button class="btn btn-danger btn-sm" data-th-del="'+escapeHtml(h.id)+'">Delete</button></span>':'')),false)).join(''):'<p class="empty">No leave entered yet.</p>')+'</div>';
+  html+='<div class="card"><h3>Events I recorded instead of a class</h3>'+(mineE.length?mineE.map(x=>evRowHtml(x,'<span class="btn-row" style="margin-left:10px;"><button class="btn btn-ghost btn-sm" data-te-edit="'+escapeHtml(x.id)+'">Edit</button><button class="btn btn-danger btn-sm" data-te-del="'+escapeHtml(x.id)+'">Delete</button></span>',false)).join(''):'<p class="empty">Nothing recorded yet.</p>')+'</div>';
+  $('#teacher-content').innerHTML=html;
+  const msg=(id,t,ok)=>{ const m=$(id); if(m){ m.textContent=t; m.className='form-msg '+(ok?'ok':'err'); } };
+  $('#th-type').addEventListener('change',x=>{ f.name=x.target.value; });
+  $('#th-notes').addEventListener('input',x=>{ f.details=x.target.value; });
+  $('#th-from').addEventListener('change',x=>{ f.date=x.target.value; if(!f.toDate || f.toDate<f.date){ f.toDate=f.date; $('#th-to').value=f.date; } });
+  $('#th-to').addEventListener('change',x=>{ f.toDate=x.target.value; });
+  const cancelH=$('#th-cancel'); if(cancelH) cancelH.addEventListener('click',()=>{ TH.form=null; renderTeacherHolidays(teacher); });
+  $('#th-save').addEventListener('click', async ()=>{
+    const d={name:LEAVE_TYPES.includes(f.name)?f.name:LEAVE_TYPES[0], type:'Leave', date:f.date, toDate:f.toDate||f.date, details:f.details.trim()};
+    const err=holValidate(d); if(err){ msg('#th-msg',err); return; }
+    const ov=leaveOverlap(teacher.id,d,f.id); if(ov){ msg('#th-msg','These dates overlap your leave on '+rangeLabel(ov)+'. Edit that entry instead.'); return; }
+    if(f.id){ const cur=DB.holidays.find(h=>h.id===f.id); if(!cur || cur.teacherId!==teacher.id || cur.by!==me){ msg('#th-msg','You can only change leave you entered yourself.'); return; } }
+    const btn=$('#th-save'); btn.disabled=true; msg('#th-msg','Saving…',true);
+    const rec=Object.assign({id:f.id||uid('LVE'), kind:'leave', teacherId:teacher.id, by:me, byName:teacher.name, at:Date.now()}, d);
+    const r=await holCommit(rec); btn.disabled=false;
+    if(!r.ok){ msg('#th-msg','NOT saved. Check the connection and press Save again; nothing was changed.'); return; }
+    if(!r.verified && !r.local){ f.id=rec.id; msg('#th-msg','Saved, but the read-back check did not pass. Press Save again to be sure.'); return; }
+    TH.form=null; TH.flash={ok:true, t:(r.local?'Saved on this device only (not connected to the database): ':'Saved and verified: ')+rec.name+' · '+rangeLabel(rec)};
+    renderTeacherHolidays(teacher);
+  });
+  $all('[data-th-edit]').forEach(b=>b.addEventListener('click',()=>{ const h=DB.holidays.find(x=>x.id===b.dataset.thEdit); if(!h) return; TH.form={id:h.id,name:h.name,date:h.date,toDate:hEnd(h),details:h.details||''}; renderTeacherHolidays(teacher); scrollTo(0,0); }));
+  $all('[data-th-del]').forEach(b=>b.addEventListener('click', async ()=>{
+    const h=DB.holidays.find(x=>x.id===b.dataset.thDel); if(!h || h.teacherId!==teacher.id) return;
+    if(!confirm('Delete your leave "'+h.name+'" ('+rangeLabel(h)+')?')) return;
+    b.disabled=true; const ok=await holRemove(h.id);
+    TH.flash=ok?{ok:true,t:'Deleted: '+h.name}:{ok:false,t:'Could not delete "'+h.name+'". Check the connection and try again.'}; renderTeacherHolidays(teacher);
+  }));
+  if(subjects.length){
+    $('#te-title').addEventListener('input',x=>{ e.title=x.target.value; });
+    $('#te-details').addEventListener('input',x=>{ e.details=x.target.value; });
+    if(!lock){
+      $('#te-date').addEventListener('change',x=>{ e.date=x.target.value; renderTeacherHolidays(teacher); });
+      $('#te-subject').addEventListener('change',x=>{ e.subjectId=x.target.value; renderTeacherHolidays(teacher); });
+      $all('[data-per]').forEach(cb=>cb.addEventListener('change',()=>{ const p=Number(cb.dataset.per); e.periods=e.periods.filter(q=>q!==p); if(cb.checked) e.periods.push(p); }));
+      $('#te-sched').addEventListener('click',()=>{ e.periods=PERIODS.filter(sched); renderTeacherHolidays(teacher); });
+    }
+    const cancelE=$('#te-cancel'); if(cancelE) cancelE.addEventListener('click',()=>{ TH.ev=null; renderTeacherHolidays(teacher); });
+    $('#te-save').addEventListener('click', async ()=>{
+      const title=e.title.trim(), details=e.details.trim();
+      if(!su){ msg('#te-msg','Choose the class / subject this event replaces.'); return; }
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(e.date) || isNaN(new Date(e.date+'T00:00:00'))){ msg('#te-msg','Choose a valid date.'); return; }
+      if(!title){ msg('#te-msg','Enter the event name.'); return; }
+      if(title.length>80){ msg('#te-msg','The event name is too long (80 characters max).'); return; }
+      if(details.length>300){ msg('#te-msg','The details are too long (300 characters max).'); return; }
+      const pers=e.periods.filter(p=>PERIODS.includes(p)).sort((a,b)=>a-b);
+      if(!pers.length){ msg('#te-msg','Tick at least one period.'); return; }
+      const lvE=lock?null:leaveOn(teacher.id,e.date); if(lvE && !confirm('You are on leave on '+e.date+' ('+lvE.name+'). Record the event anyway?')) return;
+      const marked=lock?[]:pers.filter(p=>DB.attendance.some(a=>a.subjectId===su.id && a.date===e.date && a.period===p));
+      if(marked.length && !confirm('Attendance is already saved for '+su.name+' on '+e.date+' (period '+marked.join(', ')+'). Record the event anyway?')) return;
+      const btn=$('#te-save'); btn.disabled=true; msg('#te-msg','Saving…',true);
+      const failed=[]; let saved=0;
+      for(const p of pers){
+        const old=lock?DB.holidays.find(h=>h.id===e.editId):null;
+        const rec={id:lock?e.editId:'EVT_'+su.id+'_'+e.date+'_'+p, kind:'classevent', date:e.date, toDate:e.date, name:title, type:'Event', details,
+          by:me, byName:teacher.name, classId:su.classId, subjectId:su.id, teacherId:teacher.id, period:p, at:old?old.at:Date.now()};
+        const r=await holCommit(rec);
+        if(r.ok && (r.verified || r.local)) saved++; else failed.push(p);
+      }
+      btn.disabled=false;
+      if(failed.length){ msg('#te-msg',(saved?'Saved '+saved+' period(s), but ':'')+'period '+failed.join(', ')+' could not be saved and verified. Press Save again; nothing is duplicated.'); return; }
+      TH.ev=null; TH.flash={ok:true,t:'Saved and verified: '+title+' on '+e.date+' (period '+pers.join(', ')+') instead of '+su.name};
+      renderTeacherHolidays(teacher);
+    });
+    $all('[data-te-edit]').forEach(b=>b.addEventListener('click',()=>{ const x=DB.holidays.find(h=>h.id===b.dataset.teEdit); if(!x) return; TH.ev={editId:x.id,date:x.date,subjectId:x.subjectId,periods:[Number(x.period)],title:x.name,details:x.details||''}; renderTeacherHolidays(teacher); scrollTo(0,0); }));
+  }
+  $all('[data-te-del]').forEach(b=>b.addEventListener('click', async ()=>{
+    const x=DB.holidays.find(h=>h.id===b.dataset.teDel); if(!x || x.teacherId!==teacher.id) return;
+    if(!confirm('Delete the event "'+x.name+'" on '+x.date+' (period '+x.period+')?')) return;
+    b.disabled=true; const ok=await holRemove(x.id);
+    TH.flash=ok?{ok:true,t:'Deleted: '+x.name}:{ok:false,t:'Could not delete "'+x.name+'". Check the connection and try again.'}; renderTeacherHolidays(teacher);
+  }));
+}
 function teacherDayStats(teacher, subjectFilter, dateStr){
   let recs = DB.attendance.filter(a=>a.teacherId===teacher.id && a.date===dateStr);
   if(subjectFilter!=='all') recs = recs.filter(a=>a.subjectId===subjectFilter);
@@ -2156,38 +2263,30 @@ function teacherDayStats(teacher, subjectFilter, dateStr){
   const present = recs.filter(r=>r.status==='P').length;
   return {held:recs.length, present, absent:recs.length-present, pct:Math.round((present/recs.length)*1000)/10, recs};
 }
-
 function renderTeacherCalendar(teacher){
   const subjects = DB.subjects.filter(su=>su.teacherId===teacher.id);
   if(!state.teacherCalMonth) state.teacherCalMonth = monthsData[monthsData.length-1].prefix;
   const m = state.teacherCalMonth;
-
   let html = '<div class="page-head"><div><h1>Calendar</h1><div class="sub">Day-by-day attendance across your classes.</div></div></div>';
-
   if(!subjects.length){
     html += '<div class="card"><p class="empty">No subjects are assigned to you yet.</p></div>';
     $('#teacher-content').innerHTML = html;
     return;
   }
-
   html += '<div class="card"><div class="cal-toolbar">'
     + '<div class="field" style="margin:0;min-width:180px;"><label>Month</label><select id="tcal-month">' + monthsData.map(mo=>'<option value="'+mo.prefix+'" '+(mo.prefix===m?'selected':'')+'>'+mo.name+' '+mo.prefix.slice(0,4)+'</option>').join('') + '</select></div>'
     + '<div class="field" style="margin:0;min-width:200px;"><label>Subject</label><select id="tcal-subject"><option value="all">All subjects</option>' + subjects.map(su=>'<option value="'+su.id+'" '+(state.teacherCalSubject===su.id?'selected':'')+'>'+escapeHtml(su.name)+'</option>').join('') + '</select></div>'
     + '</div>'
     + calendarHtml(m, d=>teacherDayStats(teacher, state.teacherCalSubject, d), state.teacherCalDate)
     + '</div>';
-
   html += '<div class="card" id="tcal-detail">' + teacherCalDetailHtml(state.teacherCalDate) + '</div>';
-
   $('#teacher-content').innerHTML = html;
-
   $('#tcal-month').addEventListener('change', e=>{ state.teacherCalMonth=e.target.value; state.teacherCalDate=null; renderTeacherCalendar(teacher); });
   $('#tcal-subject').addEventListener('change', e=>{ state.teacherCalSubject=e.target.value; state.teacherCalDate=null; renderTeacherCalendar(teacher); });
   $all('[data-caldate]').forEach(btn=>btn.addEventListener('click', ()=>{
     state.teacherCalDate = btn.dataset.caldate;
     renderTeacherCalendar(teacher);
   }));
-
   function teacherCalDetailHtml(dateStr){
     if(!dateStr) return '<h3>Select a day</h3><p class="sub">Click any coloured day above to see that day\'s attendance by student.</p>';
     const day = teacherDayStats(teacher, state.teacherCalSubject, dateStr);
@@ -2201,7 +2300,6 @@ function renderTeacherCalendar(teacher){
         }).join('') + '</div>';
   }
 }
-
 function renderTeacherRecords(teacher){
   const subjects = DB.subjects.filter(su=>su.teacherId===teacher.id);
   if(state.recFilters.period!=='all' && Number(state.recFilters.period)>PERIODS.length) state.recFilters.period='all';
@@ -2214,19 +2312,15 @@ function renderTeacherRecords(teacher){
     + '<div class="field"><label>Student</label><input id="rec-search" placeholder="Search by name or reg. no." value="'+state.recFilters.q+'"/></div>'
     + '</div></div>'
     + '<div id="rec-results-card" class="card"></div>';
-
   $('#teacher-content').innerHTML = html;
-
   $('#rec-subject').addEventListener('change', e=>{ state.recFilters.subject=e.target.value; renderRecResults(teacher); });
   $('#rec-month').addEventListener('change', e=>{ state.recFilters.month=e.target.value; renderRecResults(teacher); });
   $('#rec-period').addEventListener('change', e=>{ state.recFilters.period=e.target.value; renderRecResults(teacher); });
   $('#rec-date').addEventListener('change', e=>{ state.recFilters.date=e.target.value; renderRecResults(teacher); });
   $('#rec-date-clear').addEventListener('click', ()=>{ state.recFilters.date=''; $('#rec-date').value=''; renderRecResults(teacher); });
   $('#rec-search').addEventListener('input', e=>{ state.recFilters.q=e.target.value; renderRecResults(teacher); });
-
   renderRecResults(teacher);
 }
-
 function renderRecResults(teacher){
   let recs = DB.attendance.filter(a=>a.teacherId===teacher.id);
   if(state.recFilters.subject!=='all') recs = recs.filter(a=>a.subjectId===state.recFilters.subject);
@@ -2238,7 +2332,6 @@ function renderRecResults(teacher){
     recs = recs.filter(a=>{ const s=DB.students.find(st=>st.id===a.studentId); return s && (s.name.toLowerCase().includes(q) || s.regNo.toLowerCase().includes(q)); });
   }
   recs = recs.slice().sort((a,b)=> a.date<b.date?1:-1).slice(0,150);
-
   const html = '<table class="table"><thead><tr><th>Date</th><th>Period</th><th>Subject</th><th>Reg. no.</th><th>Student</th><th>Status</th><th></th></tr></thead><tbody>'
     + (recs.map(r=>{
         const s = DB.students.find(st=>st.id===r.studentId);
@@ -2248,7 +2341,6 @@ function renderRecResults(teacher){
           + '<td><button class="btn btn-ghost btn-sm" data-flip="'+r.id+'">Flip</button></td></tr>';
       }).join('') || '<tr><td colspan="7" class="empty">No records match these filters.</td></tr>')
     + '</tbody></table>';
-
   $('#rec-results-card').innerHTML = html;
   $all('[data-flip]').forEach(btn=>btn.addEventListener('click', ()=>{
     const rec = DB.attendance.find(a=>a.id===btn.dataset.flip);
@@ -2257,7 +2349,6 @@ function renderRecResults(teacher){
     renderRecResults(teacher);
   }));
 }
-
 function subjectMonthMatrix(subjectId, monthPrefix){
   const subject = DB.subjects.find(s=>s.id===subjectId);
   const month = monthsData.find(m=>m.prefix===monthPrefix);
@@ -2275,27 +2366,21 @@ function subjectMonthMatrix(subjectId, monthPrefix){
   });
   return {subject, month, rows, dates: month.dates.filter(d=>DB.attendance.some(a=>a.subjectId===subjectId && a.date===d))};
 }
-
 function renderTeacherReports(teacher){
   const subjects = DB.subjects.filter(su=>su.teacherId===teacher.id);
   if(!state.reportSubject || !subjects.find(s=>s.id===state.reportSubject)) state.reportSubject = subjects[0] ? subjects[0].id : null;
   if(!state.reportMonth) state.reportMonth = monthsData[monthsData.length-1].prefix;
-
   let html = '<div class="page-head"><div><h1>Reports</h1><div class="sub">Export attendance as a spreadsheet or a printable report.</div></div></div>';
-
   if(!subjects.length){
     html += '<div class="card"><p class="empty">No subjects are assigned to you yet.</p></div>';
     $('#teacher-content').innerHTML = html;
     return;
   }
-
   html += '<div class="card"><div class="form-row">'
     + '<div class="field"><label>Subject</label><select id="report-subject">' + subjects.map(su=>'<option value="'+su.id+'" '+(su.id===state.reportSubject?'selected':'')+'>'+escapeHtml(su.name)+'</option>').join('') + '</select></div>'
     + '<div class="field"><label>Month</label><select id="report-month">' + monthsData.map(m=>'<option value="'+m.prefix+'" '+(m.prefix===state.reportMonth?'selected':'')+'>'+m.name+' '+m.prefix.slice(0,4)+'</option>').join('') + '</select></div>'
     + '</div><div class="btn-row"><button class="btn btn-primary" id="export-csv-btn">Download as Excel (CSV)</button><button class="btn btn-ghost" id="print-report-btn">Print / save as PDF</button></div></div>';
-
   $('#teacher-content').innerHTML = html;
-
   $('#report-subject').addEventListener('change', e=>{ state.reportSubject=e.target.value; renderTeacherReports(teacher); });
   $('#report-month').addEventListener('change', e=>{ state.reportMonth=e.target.value; renderTeacherReports(teacher); });
   $('#export-csv-btn').addEventListener('click', ()=>{
@@ -2320,10 +2405,8 @@ function renderTeacherReports(teacher){
     printReport(html2);
   });
 }
-
-/* ============================= ADMIN DASHBOARD ============================= */
 function renderAdminSidebar(){
-  const tabs = [['overview','Overview'],['students','Students'],['teachers','Teachers'],['subjects','Subjects'],['classes','Classes'],['timetable','Timetable'],['holidays','Holidays'],['attendance','Attendance'],['calendar','Calendar'],['analytics','Analytics'],['content','Class Content'],['mailreminder','Mail Reminder'],['@System'],['account','Admin Account'],['settings','Settings']];
+  const tabs = [['overview','Overview'],['students','Students'],['teachers','Teachers'],['subjects','Subjects'],['classes','Classes'],['timetable','Timetable'],['holidays','Holidays & Leave'],['attendance','Attendance'],['calendar','Calendar'],['analytics','Analytics'],['content','Class Content'],['mailreminder','Mail Reminder'],['@System'],['account','Admin Account'],['settings','Settings']];
   $('#admin-sidebar').innerHTML = '<div class="side-title">Administrator</div><div class="side-sub">Full access</div>'
     + tabs.map(t=>t[0].charAt(0)==='@' ? '<div class="side-group">'+t[0].slice(1)+'</div>' : '<button class="sidebar-link '+(state.adminTab===t[0]?'active':'')+'" data-tab="'+t[0]+'">'+t[1]+'</button>').join('');
   $all('#admin-sidebar .sidebar-link').forEach(btn=>btn.addEventListener('click', ()=>{
@@ -2333,7 +2416,6 @@ function renderAdminSidebar(){
     renderAdminContent();
   }));
 }
-
 function renderAdminContent(){
   rebuildMonths();
   const map = {
@@ -2345,8 +2427,6 @@ function renderAdminContent(){
   };
   (map[state.adminTab] || renderAdminOverview)();
 }
-
-/* --- Class Content (notes & files shared by teachers): review and remove --- */
 const ADC = {classId:'all', teacherId:'all', q:''};
 function adminContentListHtml(){
   const q = ADC.q.trim().toLowerCase();
@@ -2378,8 +2458,6 @@ function renderAdminContentTab(){
   $('#adc-teacher').addEventListener('change', e=>{ ADC.teacherId = e.target.value; upd(); });
   $('#adc-q').addEventListener('input', e=>{ ADC.q = e.target.value; upd(); });
 }
-
-/* --- Timetable --- */
 function ttKey(c,d,p){ return 'TT_'+c+'_'+d+'_'+p; }
 function ttDirty(){ return Object.keys(state.ttDraft).length>0 || !!state.periodDraft; }
 function ttEffective(c,d,p){ const k=ttKey(c,d,p); return (k in state.ttDraft) ? state.ttDraft[k] : timetableEntry(c,d,p); }
@@ -2398,7 +2476,6 @@ async function saveTimetable(){
       ups=ups.filter(u=>u.period<=pl.length);
     }
   }
-  /* Added: remove older entries for the same slot that have a different id (e.g. imported data), so the new/cleared slot really replaces them */
   Object.keys(state.ttDraft).forEach(k=>{ const v=state.ttDraft[k]; DB.timetable.forEach(t=>{ if((!v||t.id!==v.id) && ttKey(t.classId,t.day,t.period)===k && !dels.includes(t.id)) dels.push(t.id); }); });
   const btn=$('#tt-save'); if(btn){ btn.disabled=true; btn.textContent='Saving…'; }
   const parts=[{table:'timetable',ups,dels}]; if(setRec) parts.push({table:'settings',ups:[setRec],dels:[]});
@@ -2468,53 +2545,120 @@ function renderAdminTimetable(){
   $('#tt-discard').addEventListener('click', ()=>{ if(confirm('Discard all unsaved changes?')){ state.ttDraft={}; state.periodDraft=null; state.periodGen=null; renderAdminTimetable(); } });
 }
 window.addEventListener('beforeunload',e=>{ if(ttDirty()){ e.preventDefault(); e.returnValue=''; } });
-
-/* --- Holidays --- */
 function holidayFormHtml(){
   const editing = state.holidayForm;
-  const h = editing || {date:'', name:'', type:'Holiday'};
+  const t = todayStr(), h = editing || {date:t, toDate:t, name:'', type:'Holiday', details:''};
   return '<h3>'+(editing?'Edit entry':'Add holiday / event')+'</h3>'
     + '<div class="form-grid">'
-    + '<div class="field"><label>Date</label><input id="f-hdate" type="date" value="'+h.date+'"/></div>'
-    + '<div class="field"><label>Name</label><input id="f-hname" value="'+h.name+'" placeholder="e.g. Republic Day"/></div>'
+    + '<div class="field"><label>Name</label><input id="f-hname" maxlength="80" value="'+escapeHtml(h.name)+'" placeholder="e.g. Diwali break"/></div>'
     + '<div class="field"><label>Type</label><select id="f-htype">' + ['Holiday','Event'].map(g=>'<option '+(g===h.type?'selected':'')+'>'+g+'</option>').join('') + '</select></div>'
-    + '</div><div class="btn-row"><button class="btn btn-primary" id="save-holiday-btn">'+(editing?'Save changes':'Add')+'</button>'
-    + (editing?'<button class="btn btn-ghost" id="cancel-holiday-btn">Cancel</button>':'') + '</div>';
+    + '<div class="field"><label>From date</label><input id="f-hdate" type="date" value="'+escapeHtml(h.date)+'"/></div>'
+    + '<div class="field"><label>To date</label><input id="f-hto" type="date" value="'+escapeHtml(hEnd(h))+'"/></div>'
+    + '</div><div class="field"><label>Notes (optional)</label><textarea id="f-hdet" maxlength="300" style="min-height:60px;">'+escapeHtml(h.details||'')+'</textarea></div>'
+    + '<div class="btn-row"><button class="btn btn-primary" id="save-holiday-btn">'+(editing?'Save changes':'Add')+'</button>'
+    + (editing?'<button class="btn btn-ghost" id="cancel-holiday-btn">Cancel</button>':'') + '</div>'
+    + '<div class="form-msg" id="ah-msg" role="alert"></div>';
 }
-
 function renderAdminHolidays(){
-  const list = DB.holidays.slice().sort((a,b)=> a.date<b.date?-1:1);
-  let html = '<div class="page-head"><div><h1>Holidays</h1><div class="sub">'+DB.holidays.length+' entries · shown to students and teachers under Academic Calendar</div></div></div>';
-  html += '<div class="card">' + holidayFormHtml() + '</div>';
-  html += '<div class="card">' + (list.length
-    ? list.map(h=>'<div class="holiday-row"><span class="holiday-date">'+h.date+'</span><span class="holiday-name">'+h.name+'</span><span class="badge badge-'+(h.type==='Holiday'?'danger':'warning')+'">'+h.type+'</span>'
-      + '<span class="btn-row"><button class="btn btn-ghost btn-sm" data-edit-h="'+h.id+'">Edit</button><button class="btn btn-ghost btn-sm" data-del-h="'+h.id+'">Delete</button></span></div>').join('')
+  const list = instHolidays().sort((a,b)=> a.date<b.date?-1:(a.date>b.date?1:0));
+  const evs = classEventsAll().sort((a,b)=> a.date<b.date?1:(a.date>b.date?-1:a.period-b.period));
+  const plain = DB.holidays.filter(h=>h._plain).length, bad = DB.holidays.filter(h=>h._bad).length;
+  let html = '<div class="page-head"><div><h1>Holidays &amp; Teacher Leave</h1><div class="sub">'+list.length+' holidays / events · '+leavesAll().length+' teacher leave entries · '+evs.length+' faculty events instead of a class. Every entry is stored encrypted and checked after saving.</div></div></div>';
+  if(bad) html += '<div class="card"><p class="form-msg err" style="margin:0;"><b>'+bad+' entr'+(bad===1?'y':'ies')+' could not be verified.</b> They were changed outside this app or encrypted with a different key. They are shown below so none are lost; delete and re-add them if they are wrong.</p></div>';
+  if(plain) html += '<div class="card"><p class="sub" style="margin:0 0 10px;"><b>'+plain+' older entr'+(plain===1?'y is':'ies are')+' not encrypted yet.</b> They still work. Encrypt them now to secure them.</p><div class="btn-row"><button class="btn btn-primary btn-sm" id="ah-enc">Encrypt older entries</button><span class="sub" id="ah-enc-msg"></span></div></div>';
+  html += '<div class="card" id="ah-form">' + holidayFormHtml() + '</div>';
+  html += '<div class="card"><h3>Holidays &amp; events</h3>' + (list.length
+    ? list.map(h=>holRowHtml(h,'<span class="btn-row" style="margin-left:10px;">'+(h._bad?'':'<button class="btn btn-ghost btn-sm" data-edit-h="'+escapeHtml(h.id)+'">Edit</button>')+'<button class="btn btn-ghost btn-sm" data-del-h="'+escapeHtml(h.id)+'">Delete</button></span>')).join('')
     : '<p class="empty">No holidays added yet.</p>') + '</div>';
-
+  const LF = state.leaveForm || {id:'', teacherId:'', name:LEAVE_TYPES[0], date:todayStr(), toDate:todayStr(), details:''};
+  const tchs = DB.teachers.filter(t=>t.status!=='Inactive' || t.id===LF.teacherId);
+  html += '<div class="card" id="lv-form"><h3>'+(LF.id?'Edit teacher leave':'Add teacher leave')+'</h3>'
+    + '<p class="sub" style="margin:6px 0 12px;">Teachers can enter their own leave from their login; you can also enter or correct it here.</p>'
+    + '<div class="form-grid">'
+    + '<div class="field"><label>Teacher</label><select id="lv-teacher">'+(tchs.length?'':'<option value="">No teachers</option>')+tchs.map(t=>'<option value="'+escapeHtml(t.id)+'" '+(t.id===LF.teacherId?'selected':'')+'>'+escapeHtml(t.name)+(t.teacherId?' ('+escapeHtml(t.teacherId)+')':'')+'</option>').join('')+'</select></div>'
+    + '<div class="field"><label>Leave type</label><select id="lv-type">'+LEAVE_TYPES.map(g=>'<option '+(g===LF.name?'selected':'')+'>'+g+'</option>').join('')+'</select></div>'
+    + '<div class="field"><label>From date</label><input id="lv-from" type="date" value="'+escapeHtml(LF.date)+'"/></div>'
+    + '<div class="field"><label>To date</label><input id="lv-to" type="date" value="'+escapeHtml(LF.toDate)+'"/></div>'
+    + '</div><div class="field"><label>Reason (optional)</label><textarea id="lv-notes" maxlength="300" style="min-height:60px;">'+escapeHtml(LF.details)+'</textarea></div>'
+    + '<div class="btn-row"><button class="btn btn-primary" id="lv-save">'+(LF.id?'Save changes':'Add leave')+'</button>'+(LF.id?'<button class="btn btn-ghost" id="lv-cancel">Cancel</button>':'')+'</div>'
+    + '<div class="form-msg" id="lv-msg" role="alert"></div></div>';
+  const lvs = leavesAll().sort((a,b)=> a.date<b.date?1:(a.date>b.date?-1:0)), tdy = todayStr();
+  html += '<div class="card"><h3>Teacher leave</h3>' + (lvs.length
+    ? lvs.map(l=>leaveRowHtml(l,'<span class="btn-row" style="margin-left:10px;">'+(l._bad?'':'<button class="btn btn-ghost btn-sm" data-edit-lv="'+escapeHtml(l.id)+'">Edit</button>')+'<button class="btn btn-ghost btn-sm" data-del-lv="'+escapeHtml(l.id)+'">Delete</button></span>',true)).join('')
+    : '<p class="empty">No teacher leave entered yet.</p>') + '</div>';
+  html += '<div class="card"><h3>Events faculty entered instead of a class</h3>' + (evs.length
+    ? evs.map(e=>evRowHtml(e,'<span class="btn-row" style="margin-left:10px;"><button class="btn btn-ghost btn-sm" data-del-e="'+escapeHtml(e.id)+'">Delete</button></span>',true)).join('')
+    : '<p class="empty">No faculty events yet.</p>') + '</div>';
   $('#admin-content').innerHTML = html;
-  $('#save-holiday-btn').addEventListener('click', ()=>{
-    const data = {date:$('#f-hdate').value, name:$('#f-hname').value.trim(), type:$('#f-htype').value};
-    if(!data.date || !data.name){ alert('Date and name are required.'); return; }
-    let saved;
-    if(state.holidayForm){ Object.assign(state.holidayForm, data); saved = state.holidayForm; }
-    else{ saved = Object.assign({id:uid('HOL')}, data); DB.holidays.push(saved); }
-    syncUpsert('holidays', saved);
-    state.holidayForm = null;
-    renderAdminHolidays();
+  const msg=(t,ok)=>{ const m=$('#ah-msg'); if(m){ m.textContent=t; m.className='form-msg '+(ok?'ok':'err'); } };
+  $('#f-hdate').addEventListener('change',()=>{ const a=$('#f-hdate').value, b=$('#f-hto'); if(!b.value || b.value<a) b.value=a; });
+  $('#save-holiday-btn').addEventListener('click', async ()=>{
+    const d = {name:$('#f-hname').value.trim(), type:$('#f-htype').value==='Event'?'Event':'Holiday', date:$('#f-hdate').value, toDate:$('#f-hto').value||$('#f-hdate').value, details:$('#f-hdet').value.trim()};
+    const err = holValidate(d); if(err){ msg(err); return; }
+    const cur = state.holidayForm;
+    if(holDuplicate(d, cur?cur.id:'')){ msg('An entry with the same name and dates already exists.'); return; }
+    const btn=$('#save-holiday-btn'); btn.disabled=true; msg('Saving…',true);
+    const rec = Object.assign({id:cur?cur.id:uid('HOL'), kind:'holiday', by:(cur&&cur.by)||'admin', byName:(cur&&cur.byName)||'Administrator', at:Date.now()}, d);
+    const r = await holCommit(rec); btn.disabled=false;
+    if(!r.ok){ msg('NOT saved. Check the connection and press Add / Save again; nothing was changed.'); return; }
+    if(!r.verified && !r.local){ state.holidayForm=rec; msg('Saved, but the read-back check did not pass. Press Save again to be sure.'); return; }
+    state.holidayForm = null; renderAdminHolidays();
+    const m=$('#ah-msg'); if(m){ m.textContent=(r.local?'Saved on this device only (not connected to the database).':'Saved and verified.'); m.className='form-msg ok'; }
   });
   const c = $('#cancel-holiday-btn');
   if(c) c.addEventListener('click', ()=>{ state.holidayForm=null; renderAdminHolidays(); });
-  $all('[data-edit-h]').forEach(b=>b.addEventListener('click', ()=>{ state.holidayForm = DB.holidays.find(h=>h.id===b.dataset.editH); renderAdminHolidays(); }));
-  $all('[data-del-h]').forEach(b=>b.addEventListener('click', ()=>{
-    if(confirm('Delete this entry?')){
-      syncDelete('holidays', b.dataset.delH);
-      DB.holidays = DB.holidays.filter(h=>h.id!==b.dataset.delH);
-      renderAdminHolidays();
-    }
+  $all('[data-edit-h]').forEach(b=>b.addEventListener('click', ()=>{ state.holidayForm = DB.holidays.find(h=>h.id===b.dataset.editH); renderAdminHolidays(); scrollTo(0,0); }));
+  $all('[data-del-h]').forEach(b=>b.addEventListener('click', async ()=>{
+    const h=DB.holidays.find(x=>x.id===b.dataset.delH); if(!h) return;
+    if(!confirm('Delete "'+h.name+'"?')) return;
+    b.disabled=true; const ok=await holRemove(h.id); if(!ok) alert('Could not delete. Check the connection and try again.');
+    renderAdminHolidays();
   }));
+  $all('[data-del-e]').forEach(b=>b.addEventListener('click', async ()=>{
+    const x=DB.holidays.find(h=>h.id===b.dataset.delE); if(!x) return;
+    if(!confirm('Delete the event "'+x.name+'" on '+x.date+' (period '+x.period+')?')) return;
+    b.disabled=true; const ok=await holRemove(x.id); if(!ok) alert('Could not delete. Check the connection and try again.');
+    renderAdminHolidays();
+  }));
+  const lmsg=(t,ok)=>{ const m=$('#lv-msg'); if(m){ m.textContent=t; m.className='form-msg '+(ok?'ok':'err'); } };
+  $('#lv-from').addEventListener('change',()=>{ const a=$('#lv-from').value, b=$('#lv-to'); if(!b.value || b.value<a) b.value=a; });
+  $('#lv-save').addEventListener('click', async ()=>{
+    const tid=$('#lv-teacher').value, tch=DB.teachers.find(t=>t.id===tid);
+    if(!tch){ lmsg('Choose a teacher.'); return; }
+    const d={name:$('#lv-type').value, type:'Leave', date:$('#lv-from').value, toDate:$('#lv-to').value||$('#lv-from').value, details:$('#lv-notes').value.trim()};
+    if(!LEAVE_TYPES.includes(d.name)) d.name=LEAVE_TYPES[0];
+    const err=holValidate(d); if(err){ lmsg(err); return; }
+    const cur=state.leaveForm;
+    const ov=leaveOverlap(tid,d,cur?cur.id:''); if(ov){ lmsg('These dates overlap '+tch.name+'\'s leave on '+rangeLabel(ov)+'. Edit that entry instead.'); return; }
+    const btn=$('#lv-save'); btn.disabled=true; lmsg('Saving…',true);
+    const rec=Object.assign({id:cur?cur.id:uid('LVE'), kind:'leave', teacherId:tid, by:(cur&&cur.by)||'admin', byName:(cur&&cur.byName)||'Administrator', at:Date.now()}, d);
+    const r=await holCommit(rec); btn.disabled=false;
+    if(!r.ok){ lmsg('NOT saved. Check the connection and press Save again; nothing was changed.'); return; }
+    if(!r.verified && !r.local){ state.leaveForm=rec; lmsg('Saved, but the read-back check did not pass. Press Save again to be sure.'); return; }
+    state.leaveForm=null; renderAdminHolidays();
+    const m=$('#lv-msg'); if(m){ m.textContent=(r.local?'Saved on this device only (not connected to the database).':'Saved and verified.'); m.className='form-msg ok'; }
+  });
+  const lc=$('#lv-cancel'); if(lc) lc.addEventListener('click',()=>{ state.leaveForm=null; renderAdminHolidays(); });
+  $all('[data-edit-lv]').forEach(b=>b.addEventListener('click',()=>{ const l=DB.holidays.find(x=>x.id===b.dataset.editLv); if(!l) return; state.leaveForm={id:l.id,teacherId:l.teacherId,name:l.name,date:l.date,toDate:hEnd(l),details:l.details||'',by:l.by,byName:l.byName}; renderAdminHolidays(); scrollTo(0,0); }));
+  $all('[data-del-lv]').forEach(b=>b.addEventListener('click', async ()=>{
+    const l=DB.holidays.find(x=>x.id===b.dataset.delLv); if(!l) return;
+    const t=DB.teachers.find(x=>x.id===l.teacherId);
+    if(!confirm('Delete '+(t?t.name+'\'s ':'')+'leave ('+rangeLabel(l)+')?')) return;
+    b.disabled=true; const ok=await holRemove(l.id); if(!ok) alert('Could not delete. Check the connection and try again.');
+    renderAdminHolidays();
+  }));
+  const enc=$('#ah-enc');
+  if(enc) enc.addEventListener('click', async ()=>{
+    enc.disabled=true; const em=$('#ah-enc-msg'); let done=0, fail=0;
+    const todo=DB.holidays.filter(h=>h._plain);
+    for(const h of todo){
+      em.textContent='Encrypting '+(done+fail+1)+' of '+todo.length+'…';
+      const rec=Object.assign({}, h, {kind:h.kind||'holiday', toDate:hEnd(h), by:h.by||'admin', byName:h.byName||'Administrator', at:h.at||Date.now()}); delete rec._plain;
+      const r=await holCommit(rec); if(r.ok && (r.verified||r.local)) done++; else fail++;
+    }
+    renderAdminHolidays(); const m=$('#ah-msg'); if(m){ m.textContent=fail?('Encrypted '+done+'; '+fail+' could not be saved. Press the button again.'):('Encrypted and verified '+done+' older entr'+(done===1?'y':'ies')+'.'); m.className='form-msg '+(fail?'err':'ok'); }
+  });
 }
-
-/* ============================= IMPORT OLD WORKBOOK (.xlsx) ============================= */
 /* Reads a workbook downloaded from the old Google Sheet (tabs: classes, teachers, subjects,
    students, attendance; timetable/holidays/sessions optional) and loads it into the app. */
 const IMPORT_SCHEMA = {
@@ -2524,7 +2668,7 @@ const IMPORT_SCHEMA = {
   students:['id','regNo','name','dob','gender','course','dept','semester','section','email','phone','admissionYear','status','classId'],
   attendance:['id','studentId','subjectId','teacherId','date','period','status'],
   timetable:['id','classId','day','period','subjectId'],
-  holidays:['id','date','name','type'],
+  holidays:['id','date','name','type','toDate','details','kind','classId','subjectId','teacherId','period','by','byName'],
   sessions:['id','subjectId','classId','teacherId','date','period','topics','files'],
   settings:['id','value']
 };
@@ -2579,15 +2723,11 @@ function handleOldWorkbook(e){
   };
   reader.readAsArrayBuffer(file);
 }
-
-/* --- Settings (Firebase link + backup/restore) --- */
-
 const FIRESTORE_RULES = "rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{col}/{doc} {\n      allow read, write: if col in [\n        'classes', 'teachers', 'subjects', 'students', 'attmonth',\n        'timetable', 'holidays', 'sessions', 'sessionfiles',\n        'settings', 'meta', 'mail'\n      ];\n    }\n  }\n}";
 function renderAdminSettings(){
   const cfg = getSupabaseCfg();
   const connected = BACKEND_ON();
   let html = '<div class="page-head"><div><h1>Settings</h1><div class="sub">Connect Cloud Firestore so every device shares the same live data.</div></div></div>';
-
   html += '<div class="card"><h3>Database connection <span class="status-pill '+(connected?'status-connected':'status-disconnected')+'" style="margin-left:8px;">'+(connected?'Connected':'Not connected — running on this device only')+'</span></h3>'
     + '<div class="form-row">'
     + '<div class="field"><label>Firebase Project ID</label><input id="sb-url" placeholder="my-attendance-app" value="'+escapeHtml(cfg.url)+'"/></div>'
@@ -2596,13 +2736,11 @@ function renderAdminSettings(){
     + '<div class="btn-row"><button class="btn btn-primary" id="sb-save">Save &amp; test connection</button>'
     + (connected ? '<button class="btn btn-ghost" id="sb-pull">Reload from database</button><button class="btn btn-ghost" id="sb-push">Push local data up</button><button class="btn btn-ghost" id="sb-disconnect">Disconnect</button>' : '')
     + '</div><div id="sb-status" class="sub" style="margin-top:10px;"></div></div>';
-
   html += '<div class="card"><h3>One-time setup: Cloud Firestore</h3><p class="sub" style="margin-bottom:10px;">1) Open Firebase Console. 2) Build &gt; Firestore Database &gt; Create database. 3) Copy the Project ID from Project settings &gt; General and the Web API key from Your apps. 4) Enter both values above and save. The app stores each table as a collection and each record as a document. Email delivery still uses the Firestore <b>Trigger Email from Firestore</b> extension.</p><p class="sub"><b>Security:</b> This HTML currently uses its own client-side app login and Firestore REST API without a Firebase Authentication ID token. Therefore, rules requiring request.auth will block its requests. Collection allow-list rules without request.auth can be used only for temporary testing; they do not secure student data. For production, integrate Firebase Authentication and role-based rules.</p></div>';
   html += '<div class="card"><div class="mark-toolbar"><h3>Firestore security rules</h3><button class="btn btn-ghost btn-sm" id="rules-copy">Copy rules</button></div>'
     + '<p class="sub" style="margin:8px 0 10px;">Open Firebase Console &gt; Firestore Database &gt; <b>Rules</b>, replace everything with the rules below, and click <b>Publish</b>. They allow only the collections this app uses.</p>'
     + '<pre id="rules-text" style="background:#f4f4f8;color:#1F1B3A;padding:12px;border-radius:6px;overflow:auto;font-size:.8rem;line-height:1.5;white-space:pre;user-select:all;">'+escapeHtml(FIRESTORE_RULES)+'</pre>'
     + '<p class="sub" style="margin-top:10px;"><b>Important:</b> the app signs in with its own login and does not send a Firebase Authentication token, so these rules cannot check who is calling. Anyone who knows the project details could read or change the listed collections directly. Use them for testing; real student data needs Firebase Authentication added first.</p></div>';
-
   const bd = getSetting('brand', {});
   html += '<div class="card"><h3>College logo &amp; front page</h3><div class="form-row">'
     + '<div class="field"><label>College name</label><input id="bn-name" value="'+escapeHtml(bd.name||'')+'"/></div>'
@@ -2615,14 +2753,11 @@ function renderAdminSettings(){
     + '<b>Do this before connecting Firebase</b> (or while connected), so you start with only your real data.</p>'
     + '<div class="btn-row"><label class="btn btn-primary btn-sm file-btn">Choose old .xlsx file<input type="file" id="import-old" accept=".xlsx,.xls" hidden/></label></div>'
     + '<div class="btn-row"><button class="btn btn-ghost btn-sm" id="export-all">Export everything to Excel</button></div><div id="import-status" class="sub" style="margin-top:10px;"></div></div>';
-
   html += '<div class="card"><h3>Delete all data</h3><p class="sub" style="margin-bottom:10px;">Permanently removes every class, teacher, subject, student, attendance record, timetable entry and holiday from the database Download a backup first.</p><div class="btn-row"><button class="btn btn-ghost btn-sm" id="wipe-all" style="color:var(--danger);border-color:var(--danger)">Delete all data…</button></div></div>';
   html += '<div class="card"><h3>Backup &amp; restore</h3><p class="sub" style="margin-bottom:10px;">Works even without a connected database — download everything as a file, or load one back in.</p>'
     + '<div class="btn-row"><button class="btn btn-ghost btn-sm" id="backup-export">Download backup (.json)</button>'
     + '<label class="btn btn-ghost btn-sm file-btn">Restore from backup<input type="file" id="backup-import" accept=".json" hidden/></label></div></div>';
-
   $('#admin-content').innerHTML = html;
-
   $('#import-old').addEventListener('change', handleOldWorkbook);
   let pendingLogo = bd.logo || '';
   $('#bn-logo').addEventListener('change', e=>{ if(e.target.files[0]) readLogo(e.target.files[0], d=>{ pendingLogo = d; }); });
@@ -2704,13 +2839,11 @@ function renderAdminSettings(){
     reader.readAsText(file);
   });
 }
-
 function renderAdminOverview(){
   const overall = overallStatsAll();
   const latestDate = DB.attendance.reduce((max,a)=> a.date>max?a.date:max, '0000-00-00');
   const latestRecs = DB.attendance.filter(a=>a.date===latestDate);
   const latestPct = latestRecs.length ? Math.round((latestRecs.filter(r=>r.status==='P').length/latestRecs.length)*100) : 0;
-
   let html = '<div class="page-head"><div><h1>Overview</h1><div class="sub">Institution-wide snapshot</div></div></div>';
   html += '<div class="stat-grid">'
     + '<div class="stat-card"><div class="num">'+DB.students.length+'</div><div class="label">Total students</div></div>'
@@ -2719,15 +2852,15 @@ function renderAdminOverview(){
     + '<div class="stat-card"><div class="num">'+DB.classes.length+'</div><div class="label">Total classes</div></div>'
     + '<div class="stat-card"><div class="num">'+latestPct+'%</div><div class="label">Attendance on '+latestDate+'</div></div>'
     + '<div class="stat-card"><div class="num">'+overall.pct+'%</div><div class="label">Average attendance</div></div>'
+    + '<div class="stat-card"><div class="num">'+new Set(leavesAll().filter(l=>!l._bad && todayStr()>=l.date && todayStr()<=hEnd(l)).map(l=>l.teacherId)).size+'</div><div class="label">Teachers on leave today</div></div>'
     + '</div>';
+  html += leavesAll().filter(l=>!l._bad && todayStr()>=l.date && todayStr()<=hEnd(l)).map(l=>{ const t=DB.teachers.find(x=>x.id===l.teacherId); return '<div class="notice notice-warning" style="margin-bottom:8px;"><b>'+escapeHtml(t?t.name:(l.byName||'Teacher'))+'</b> is on leave · '+escapeHtml(l.name)+' — '+escapeHtml(rangeLabel(l))+'</div>'; }).join('');
   html += '<div class="grid-2">'
     + '<div class="card"><h3>Subject performance</h3>' + barListHtml(DB.subjects.map(su=>({label:su.name, pct:subjectOverallStats(su.id).pct}))) + '</div>'
     + '<div class="card"><h3>Class comparison</h3>' + barListHtml(DB.classes.map(c=>({label:c.course+' S'+c.semester+'-'+c.section, pct:classOverallStats(c.id).pct}))) + '</div>'
     + '</div>';
   $('#admin-content').innerHTML = html;
 }
-
-/* --- Students --- */
 function studentFormHtml(){
   const editing = state.studentForm;
   const s = editing || {regNo:'', name:'', dob:'', gender:'Female', email:'', phone:'', admissionYear:'2024', status:'Active', classId:DB.classes[0].id};
@@ -2745,7 +2878,6 @@ function studentFormHtml(){
     + '</div><div class="btn-row"><button class="btn btn-primary" id="save-student-btn">'+(editing?'Save changes':'Add student')+'</button>'
     + (editing?'<button class="btn btn-ghost" id="cancel-student-btn">Cancel</button>':'') + '</div>';
 }
-
 function renderAdminStudents(){
   let html = '<div class="page-head"><div><h1>Students</h1><div class="sub">'+DB.students.length+' records</div></div>'
     + '<div class="btn-row"><label class="btn btn-ghost btn-sm file-btn">Import CSV / Excel<input type="file" id="import-students" accept=".csv,.xlsx,.xls" hidden/></label>'
@@ -2753,7 +2885,6 @@ function renderAdminStudents(){
   html += '<div class="card" id="student-form-card">' + studentFormHtml() + '</div>';
   html += '<div class="card"><p class="sub" style="margin-bottom:10px;">Bulk file columns, in order: Reg No, Name, DOB, Gender, Course, Dept, Semester, Section, Email, Phone, Admission Year, Status. The first row (headers) is skipped automatically — works for large lists in one go.</p>'
     + '<input id="student-search" placeholder="Search by name or reg. no." value="'+state.studentSearch+'" style="margin-bottom:14px;max-width:320px;"/><div id="student-table-wrap"></div></div>';
-
   $('#admin-content').innerHTML = html;
   bindStudentFormEvents();
   $('#student-search').addEventListener('input', e=>{ state.studentSearch=e.target.value; renderStudentTable(); });
@@ -2765,7 +2896,6 @@ function renderAdminStudents(){
   $('#import-students').addEventListener('change', handleImportStudents);
   renderStudentTable();
 }
-
 function bindStudentFormEvents(){
   $('#save-student-btn').addEventListener('click', ()=>{
     const classId = $('#f-classId').value;
@@ -2786,7 +2916,6 @@ function bindStudentFormEvents(){
   const cancelBtn = $('#cancel-student-btn');
   if(cancelBtn) cancelBtn.addEventListener('click', ()=>{ state.studentForm=null; renderAdminStudents(); });
 }
-
 function renderStudentTable(){
   let list = DB.students;
   if(state.studentSearch){
@@ -2815,7 +2944,6 @@ function renderStudentTable(){
     }
   }));
 }
-
 function importStudentRows(rows){
   const imported = [];
   rows.forEach(cols=>{
@@ -2837,7 +2965,6 @@ function importStudentRows(rows){
   renderAdminStudents();
   alert('Imported '+imported.length+' student'+(imported.length===1?'':'s')+'.');
 }
-
 function handleImportStudents(e){
   const file = e.target.files[0];
   if(!file) return;
@@ -2863,8 +2990,6 @@ function handleImportStudents(e){
   if(isExcel) reader.readAsBinaryString(file); else reader.readAsText(file);
   e.target.value = '';
 }
-
-/* --- Teachers --- */
 function teacherFormHtml(){
   const editing = state.teacherForm;
   const t = editing || {teacherId:'', name:'', password:'', status:'Active', email:'', phone:''};
@@ -2884,7 +3009,6 @@ function teacherFormHtml(){
     + '<div class="btn-row"><button class="btn btn-primary" id="save-teacher-btn">'+(editing?'Save changes':'Add teacher')+'</button>'
     + (editing?'<button class="btn btn-ghost" id="cancel-teacher-btn">Cancel</button>':'') + '</div>';
 }
-
 function teacherRowsHtml(){
   const f=state.tF, q=f.q.toLowerCase();
   const list=DB.teachers.filter(t=>{
@@ -2917,7 +3041,6 @@ function renderAdminTeachers(){
   $('#tf-status').addEventListener('change',e=>{ f.status=e.target.value; upd(); });
   $('#tf-class').addEventListener('change',e=>{ f.classId=e.target.value; upd(); });
 }
-
 function bindTeacherFormEvents(){
   $('#save-teacher-btn').addEventListener('click', async ()=>{
     const selected = Array.from($('#f-tsubjects').selectedOptions).map(o=>o.value);
@@ -2949,8 +3072,6 @@ function bindTeacherFormEvents(){
   const c = $('#cancel-teacher-btn');
   if(c) c.addEventListener('click', ()=>{ state.teacherForm=null; renderAdminTeachers(); });
 }
-
-/* --- Subjects --- */
 function subjectFormHtml(){
   const editing = state.subjectForm;
   const s = editing || {code:'', name:'', semester:2, teacherId:DB.teachers[0]?DB.teachers[0].id:'', classId:DB.classes[0].id};
@@ -2964,7 +3085,6 @@ function subjectFormHtml(){
     + '</div><div class="btn-row"><button class="btn btn-primary" id="save-subject-btn">'+(editing?'Save changes':'Add subject')+'</button>'
     + (editing?'<button class="btn btn-ghost" id="cancel-subject-btn">Cancel</button>':'') + '</div>';
 }
-
 function renderAdminSubjects(){
   let html = '<div class="page-head"><div><h1>Subjects</h1><div class="sub">'+DB.subjects.length+' records</div></div></div>';
   html += '<div class="card">' + subjectFormHtml() + '</div>';
@@ -2976,7 +3096,6 @@ function renderAdminSubjects(){
           + '<td><button class="btn btn-ghost btn-sm" data-edit-s="'+su.id+'">Edit</button> <button class="btn btn-ghost btn-sm" data-del-s="'+su.id+'">Delete</button></td></tr>';
       }).join('')
     + '</tbody></table></div>';
-
   $('#admin-content').innerHTML = html;
   bindSubjectFormEvents();
   $all('[data-edit-s]').forEach(b=>b.addEventListener('click', ()=>{ state.subjectForm = DB.subjects.find(s=>s.id===b.dataset.editS); renderAdminSubjects(); }));
@@ -2988,7 +3107,6 @@ function renderAdminSubjects(){
     }
   }));
 }
-
 function bindSubjectFormEvents(){
   $('#save-subject-btn').addEventListener('click', ()=>{
     const data = {code:$('#f-scode').value.trim(), name:$('#f-sname').value.trim(), semester:Number($('#f-ssem').value)||1, teacherId:$('#f-steacher').value, classId:$('#f-sclass').value};
@@ -3003,8 +3121,6 @@ function bindSubjectFormEvents(){
   const c = $('#cancel-subject-btn');
   if(c) c.addEventListener('click', ()=>{ state.subjectForm=null; renderAdminSubjects(); });
 }
-
-/* --- Classes --- */
 function classFormHtml(){
   const editing = state.classForm;
   const c = editing || {course:'', semester:1, section:'A', year:''};
@@ -3017,7 +3133,6 @@ function classFormHtml(){
     + '</div><div class="btn-row"><button class="btn btn-primary" id="save-class-btn">'+(editing?'Save changes':'Add class')+'</button>'
     + (editing?'<button class="btn btn-ghost" id="cancel-class-btn">Cancel</button>':'') + '</div>';
 }
-
 function renderAdminClasses(){
   let html = '<div class="page-head"><div><h1>Classes</h1><div class="sub">'+DB.classes.length+' records</div></div></div>';
   html += '<div class="card">' + classFormHtml() + '</div>';
@@ -3028,7 +3143,6 @@ function renderAdminClasses(){
           + '<td><button class="btn btn-ghost btn-sm" data-edit-c="'+c.id+'">Edit</button> <button class="btn btn-ghost btn-sm" data-del-c="'+c.id+'">Delete</button></td></tr>';
       }).join('')
     + '</tbody></table></div>';
-
   $('#admin-content').innerHTML = html;
   bindClassFormEvents();
   $all('[data-edit-c]').forEach(b=>b.addEventListener('click', ()=>{ state.classForm = DB.classes.find(c=>c.id===b.dataset.editC); renderAdminClasses(); }));
@@ -3040,7 +3154,6 @@ function renderAdminClasses(){
     }
   }));
 }
-
 function bindClassFormEvents(){
   $('#save-class-btn').addEventListener('click', ()=>{
     const data = {course:$('#f-ccourse').value.trim(), semester:Number($('#f-csem').value)||1, section:$('#f-csection').value.trim(), year:$('#f-cyear').value.trim()};
@@ -3055,8 +3168,6 @@ function bindClassFormEvents(){
   const c = $('#cancel-class-btn');
   if(c) c.addEventListener('click', ()=>{ state.classForm=null; renderAdminClasses(); });
 }
-
-/* --- Attendance (master) --- */
 function renderAdminAttendance(){
   const f = state.adminAttFilters;
   let html = '<div class="page-head"><div><h1>Attendance</h1><div class="sub">Search, correct or export attendance across the institution.</div></div></div>';
@@ -3070,7 +3181,6 @@ function renderAdminAttendance(){
     + '<div class="field"><label>Student</label><input id="att-search" placeholder="Search by name or reg. no." value="'+f.q+'"/></div>'
     + '</div><div class="btn-row"><button class="btn btn-ghost btn-sm" id="att-export">Export filtered (CSV)</button><button class="btn btn-ghost btn-sm" id="att-xlsx">Export filtered (Excel)</button><button class="btn btn-ghost btn-sm" id="att-print">Print report</button></div></div>'
     + '<div id="att-results"></div>';
-
   $('#admin-content').innerHTML = html;
   $('#att-class').addEventListener('change', e=>{ f.classId=e.target.value; renderAdminAttResults(); });
   $('#att-subject').addEventListener('change', e=>{ f.subjectId=e.target.value; renderAdminAttResults(); });
@@ -3083,10 +3193,8 @@ function renderAdminAttendance(){
   $('#att-status').addEventListener('change', e=>{ f.status=e.target.value; renderAdminAttResults(); });
   $('#att-xlsx').addEventListener('click', ()=>{ const rows = filteredAdminAttendance().map(r=>{ const s=DB.students.find(x=>x.id===r.studentId), su=DB.subjects.find(x=>x.id===r.subjectId), t=DB.teachers.find(x=>x.id===r.teacherId); return {Date:r.date, Period:r.period, 'Reg No':s?s.regNo:'', Student:s?s.name:'', Subject:su?su.name:'', Teacher:t?t.name:'', Status:r.status==='P'?'Present':'Absent'}; }); const wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(rows), 'Attendance'); XLSX.writeFile(wb, 'Attendance_Report.xlsx'); });
   $('#att-print').addEventListener('click', printAdminAttendance);
-
   renderAdminAttResults();
 }
-
 function filteredAdminAttendance(){
   const f = state.adminAttFilters;
   let recs = DB.attendance.slice();
@@ -3106,14 +3214,12 @@ function filteredAdminAttendance(){
   }
   return recs.sort((a,b)=> a.date<b.date?1:-1);
 }
-
 function renderAdminAttResults(){
   const all = filteredAdminAttendance();
   const held = all.length;
   const present = all.filter(r=>r.status==='P').length;
   const pct = held ? Math.round((present/held)*1000)/10 : 0;
   const shown = all.slice(0, 150);
-
   const html = '<div class="card"><div class="sub" style="margin-bottom:12px;">'+held+' matching records · '+pct+'% present'+(held>150?' · showing first 150':'')+'</div>'
     + '<table class="table"><thead><tr><th>Date</th><th>Period</th><th>Reg. no.</th><th>Student</th><th>Subject</th><th>Teacher</th><th>Status</th><th></th></tr></thead><tbody>'
     + (shown.map(r=>{
@@ -3125,7 +3231,6 @@ function renderAdminAttResults(){
           + '<td><button class="btn btn-ghost btn-sm" data-aflip="'+r.id+'">Flip</button> <button class="btn btn-ghost btn-sm" data-adel="'+r.id+'">Delete</button></td></tr>';
       }).join('') || '<tr><td colspan="8" class="empty">No records match these filters.</td></tr>')
     + '</tbody></table></div>';
-
   $('#att-results').innerHTML = html;
   $all('[data-aflip]').forEach(b=>b.addEventListener('click', ()=>{
     const rec = DB.attendance.find(a=>a.id===b.dataset.aflip);
@@ -3139,7 +3244,6 @@ function renderAdminAttResults(){
     renderAdminAttResults();
   }));
 }
-
 function exportAdminAttendance(){
   const recs = filteredAdminAttendance();
   const header = ['Date','Period','Reg No','Student','Subject','Teacher','Status'];
@@ -3151,7 +3255,6 @@ function exportAdminAttendance(){
   });
   downloadCSV('Attendance_Report.csv', [header].concat(rows));
 }
-
 function printAdminAttendance(){
   const recs = filteredAdminAttendance().slice(0, 300);
   const held = recs.length;
@@ -3169,8 +3272,6 @@ function printAdminAttendance(){
       }).join('') + '</tbody></table>';
   printReport(html);
 }
-
-/* --- Calendar --- */
 function adminDayStats(classFilter, dateStr){
   let recs = DB.attendance.filter(a=>a.date===dateStr);
   if(classFilter!=='all'){
@@ -3181,11 +3282,9 @@ function adminDayStats(classFilter, dateStr){
   const present = recs.filter(r=>r.status==='P').length;
   return {held:recs.length, present, absent:recs.length-present, pct:Math.round((present/recs.length)*1000)/10, recs};
 }
-
 function renderAdminCalendar(){
   if(!state.adminCalMonth) state.adminCalMonth = monthsData[monthsData.length-1].prefix;
   const m = state.adminCalMonth;
-
   let html = '<div class="page-head"><div><h1>Calendar</h1><div class="sub">Day-by-day attendance across the institution.</div></div></div>';
   html += '<div class="card"><div class="cal-toolbar">'
     + '<div class="field" style="margin:0;min-width:180px;"><label>Month</label><select id="acal-month">' + monthsData.map(mo=>'<option value="'+mo.prefix+'" '+(mo.prefix===m?'selected':'')+'>'+mo.name+' '+mo.prefix.slice(0,4)+'</option>').join('') + '</select></div>'
@@ -3193,18 +3292,14 @@ function renderAdminCalendar(){
     + '</div>'
     + calendarHtml(m, d=>adminDayStats(state.adminCalClass, d), state.adminCalDate)
     + '</div>';
-
   html += '<div class="card" id="acal-detail">' + adminCalDetailHtml(state.adminCalDate) + '</div>';
-
   $('#admin-content').innerHTML = html;
-
   $('#acal-month').addEventListener('change', e=>{ state.adminCalMonth=e.target.value; state.adminCalDate=null; renderAdminCalendar(); });
   $('#acal-class').addEventListener('change', e=>{ state.adminCalClass=e.target.value; state.adminCalDate=null; renderAdminCalendar(); });
   $all('[data-caldate]').forEach(btn=>btn.addEventListener('click', ()=>{
     state.adminCalDate = btn.dataset.caldate;
     renderAdminCalendar();
   }));
-
   function adminCalDetailHtml(dateStr){
     if(!dateStr) return '<h3>Select a day</h3><p class="sub">Click any coloured day above to see that day\'s attendance by class and subject.</p>';
     const day = adminDayStats(state.adminCalClass, dateStr);
@@ -3224,8 +3319,6 @@ function renderAdminCalendar(){
         }).join('') + '</div>';
   }
 }
-
-/* --- Analytics --- */
 function stuPct(id){ const r = DB.attendance.filter(a=>a.studentId===id); return r.length ? Math.round(100*r.filter(a=>a.status==='P').length/r.length) : 0; }
 function cv(id,h){ return '<div style="position:relative;height:'+h+'px"><canvas id="'+id+'"></canvas></div>'; }
 function renderAdminAnalytics(){
@@ -3262,11 +3355,8 @@ function renderAdminAnalytics(){
   const cls = DB.classes.map(c=>({n:c.course+' S'+c.semester+'-'+c.section, p:classOverallStats(c.id).pct}));
   new Chart($('#ch-cls'), {type:'bar', data:{labels:cls.map(x=>x.n), datasets:[{data:cls.map(x=>x.p), backgroundColor:cls.map(x=>clrFor(x.p)), borderRadius:4}]}, options:{indexAxis:'y', maintainAspectRatio:false, plugins:{legend:{display:false}, targetLine:{value:75}, tooltip:{callbacks:{label:c=>c.parsed.x+'% attendance'}}}, scales:{x:pctAx, y:{grid:{display:false}}}}, plugins:[targetLine]});
 }
-
 const DASH = '<span style="color:var(--muted)">—</span>';
 function clsLabel(c){ return c ? c.course+' S'+c.semester+'-'+c.section : '—'; }
-
-/* ============================= E-MAIL (attendance confirmations + admin login codes) ============================= */
 /* The app queues each email as a document in the Firestore "mail" collection. The Firebase extension
    "Trigger Email from Firestore" (see the setup card on Admin > Admin Account) actually delivers it by SMTP. */
 function collegeName(){ return (getSetting('brand',{}).name||'').trim() || 'Attendance Ledger'; }
@@ -3290,8 +3380,6 @@ function mailWrap(title, inner){
   return '<div style="font-family:Arial,sans-serif;max-width:560px;color:#1F1B3A;"><h2 style="color:#4338A8;margin:0 0 10px;">'+escapeHtml(title)+'</h2>'+inner
     +'<p style="color:#6B6680;font-size:12px;margin-top:22px;">'+escapeHtml(collegeName())+' · automated message</p></div>';
 }
-
-/* Sent to the subject's teacher as soon as attendance is saved. */
 function attendanceMarkedMail(owner, marker, subject, cls, date, period, recs, isUpdate){
   const present=recs.filter(r=>r.status==='P').length, total=recs.length, absent=total-present;
   const pct=total?Math.round((present/total)*1000)/10:0;
@@ -3313,7 +3401,6 @@ function attendanceMarkedMail(owner, marker, subject, cls, date, period, recs, i
     +(abs.length?'<table style="border-collapse:collapse;font-size:14px;"><tr><th align="left" style="padding:6px 10px;">Reg. no.</th><th align="left" style="padding:6px 10px;">Absent student</th></tr>'+absRows+'</table>'+(more>0?'<p>…and '+more+' more.</p>':''):'<p>No absentees.</p>'));
   return {subject:subjectLine, text, html};
 }
-/* returns {status:'queued'|'noemail'|'failed', to} */
 async function mailAttendanceMarked(marker, subject, date, period, isUpdate){
   const owner=DB.teachers.find(t=>t.id===subject.teacherId) || marker;
   const to=normEmail(owner.email);
@@ -3328,8 +3415,6 @@ async function mailAttendanceMarked(marker, subject, date, period, isUpdate){
     return {status:'queued', to};
   }catch(e){ return {status:'failed', to}; }
 }
-
-/* ---- sent-mail log (shown on Admin > Admin Account) ---- */
 const MAIL_UI = {log:[], logMsg:'Loading…', loaded:false};
 function decMailDoc(d){
   const f=d.fields||{}, g=k=>f[k]&&('stringValue' in f[k])?f[k].stringValue:'';
@@ -3358,7 +3443,6 @@ function mailLogHtml(){
       return '<tr><td>'+(m.createdAt?escapeHtml(new Date(m.createdAt).toLocaleString()):DASH)+'</td><td>'+escapeHtml(m.to)+'</td><td>'+escapeHtml(m.subject)+'</td><td>'+(m.by==='system'?'Login / security':'Attendance')+'</td><td><span class="badge badge-'+s[0]+'" '+(m.error?'title="'+escapeHtml(m.error)+'"':'')+'>'+s[1]+'</span></td></tr>';
     }).join('')+'</tbody></table></div>';
 }
-
 /* Housekeeping: deletes mails older than 30 days (replaces a Firestore TTL policy, which needs the paid plan).
    Runs from the admin login, at most once a day per browser, in small batches so it costs very few reads. */
 async function purgeOldMail(){
@@ -3375,8 +3459,6 @@ async function purgeOldMail(){
     }
   }catch(e){}
 }
-
-/* ============================= ADMIN > MAIL REMINDER ============================= */
 /* Manual e-mail reminders: pick who (teachers / students / everyone), what (today's or tomorrow's classes, or a custom
    message) and tick individual recipients. Mails are queued in the Firestore "mail" collection (same delivery path as
    attendance mails). Every mail sent is listed below, where it can be deleted or printed. */
@@ -3391,12 +3473,10 @@ function mrInfo(){ return MR.what==='custom' ? null : mrDay(MR.what==='tomorrow'
 function mrOffReason(info){
   if(!info) return '';
   if(WEEKDAYS.indexOf(info.day)===-1) return 'Sunday';
-  const h=holidaysOn(info.date)[0]; return h ? 'Holiday: '+h.name : '';
+  const h=holidaysOn(info.date,true)[0]; return h ? 'Holiday: '+h.name : '';
 }
 function mrBodyHtml(text){ return '<p>'+escapeHtml(text).replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>')+'</p>'; }
 function mrFill(tpl, vars){ return String(tpl).replace(/\{(name|regNo|pct)\}/g,(m,k)=>vars[k]!==undefined?vars[k]:m); }
-
-/* ---- people ---- */
 function mrClassLines(entries, role){
   return entries.map(tt=>{
     const su=DB.subjects.find(x=>x.id===tt.subjectId), c=DB.classes.find(x=>x.id===tt.classId);
@@ -3426,7 +3506,6 @@ function mrPeople(ignoreSearch){
 function mrResetSel(){ MR.sel=new Set(mrPeople(true).filter(p=>!p.dis).map(p=>p.key)); }
 function mrChosen(){ return mrPeople(true).filter(p=>!p.dis && MR.sel.has(p.key)); }
 function mrExtraList(){ return MR.what==='custom' ? MR.extra.split(/[\s,;]+/).map(normEmail).filter(validEmail) : []; }
-
 function mrPeopleHtml(){
   const ppl=mrPeople(false);
   if(!ppl.length) return '<p class="sub" style="margin:6px 0;">No one found.</p>';
@@ -3455,8 +3534,6 @@ function mrRefreshPeople(){ const b=$('#mr-people'); if(!b) return; b.innerHTML=
 function mrBindPeople(){
   $all('[data-mrp]').forEach(cb=>cb.addEventListener('change',()=>{ cb.checked?MR.sel.add(cb.dataset.mrp):MR.sel.delete(cb.dataset.mrp); mrUpdateCount(); }));
 }
-
-/* ---- sent-mail list (load / delete / print) ---- */
 async function mrLoad(){
   if(!MAIL_ON()){ MR.log=[]; MR.msg='Connect the database in Settings to send and see mails.'; return; }
   try{
@@ -3518,8 +3595,6 @@ function mrPrint(){
     +rows.map((m,i)=>'<tr><td style="'+td+'">'+(i+1)+'</td><td style="'+td+'">'+escapeHtml(m.createdAt?new Date(m.createdAt).toLocaleString():'')+'</td><td style="'+td+'">'+escapeHtml(m.to)+'</td><td style="'+td+'">'+escapeHtml(m.subject)+'</td><td style="'+td+'">'+st(m)+'</td></tr>').join('')
     +'</tbody></table>');
 }
-
-/* ---- send ---- */
 async function mrSend(){
   const msg=$('#mr-msg'), btn=$('#mr-send'), err=t=>{ msg.className='form-msg err'; msg.textContent=t; };
   if(!MAIL_ON()) return err('Connect the database in Settings first.');
@@ -3540,8 +3615,6 @@ async function mrSend(){
   await mrLoad(); mrRenderListCard();
   msg.className='form-msg '+(fail?'err':'ok'); msg.textContent=ok+' queued'+(fail?', '+fail+' failed (check database rules).':'. They are delivered within a minute.');
 }
-
-/* ---- screen ---- */
 function renderAdminMailReminder(){
   if(!MR.init){ MR.init=true; mrResetSel(); }
   const info=mrInfo(), off=mrOffReason(info), custom=MR.what==='custom';
@@ -3580,8 +3653,6 @@ function renderAdminMailReminder(){
   mrBindPeople(); mrUpdateCount(); mrRenderListCard();
   if(!MR.loaded){ MR.loaded=true; mrLoad().then(()=>{ if(state.adminTab==='mailreminder') mrRenderListCard(); }); }
 }
-
-/* ============================= ADMIN ACCOUNT TAB ============================= */
 function renderAdminAccount(){
   const A=adminAccount(), conn=MAIL_ON();
   let html='<div class="page-head"><div><h1>Admin Account</h1><div class="sub">The single administrator login. Sign-in asks for your password and a code e-mailed to the admin address below.</div></div></div>';
@@ -3601,7 +3672,6 @@ function renderAdminAccount(){
   html+='<div class="card"><div class="mark-toolbar"><h3>Recent emails</h3><button class="btn btn-ghost btn-sm" id="mr-refresh">Refresh</button></div><div id="mr-log">'+mailLogHtml()+'</div></div>';
   html+='<div class="card"><h3>One-time setup: email delivery</h3><p class="sub">This app queues each email (admin login codes and attendance confirmations to teachers) in your Firestore database; Firebase sends it. 1) In Firebase console open <b>Extensions</b> and install <b>Trigger Email from Firestore</b>. 2) Set the collection to <b>mail</b> and enter your SMTP details (for example a Gmail app password or any mail service). 3) In Settings, copy the updated rules (they include <b>mail</b>) into Firestore &gt; Rules and Publish. Until this is done, emails stay "Queued" and admin login codes will not arrive.</p></div>';
   $('#admin-content').innerHTML=html;
-
   const msg=(t,ok)=>{ const m=$('#ac-msg'); m.textContent=t; m.className='form-msg '+(ok?'ok':'err'); };
   let pending=null;
   const closeOtp=()=>{ otpDrop('acct'); pending=null; $('#ac-otp').style.display='none'; $('#ac-save').style.display=''; };
@@ -3649,8 +3719,6 @@ function renderAdminAccount(){
   $('#mr-refresh').addEventListener('click', async()=>{ await loadMailLog(true); const el=$('#mr-log'); if(el) el.innerHTML=mailLogHtml(); });
   if(!MAIL_UI.loaded) loadMailLog().then(()=>{ const el=$('#mr-log'); if(el) el.innerHTML=mailLogHtml(); });
 }
-
-/* ============================= INIT ============================= */
 function initApp(){
   const ready = ()=>{ applyPeriodConfig(); applyBrand(); populateLoginSelects(); bindLoginEvents(); };
   if(BACKEND_ON()){ try{ const b=JSON.parse(localStorage.getItem('atl_brand_cache')||'[]'); if(Array.isArray(b)) DB.settings=b; }catch(e){} }
@@ -3660,8 +3728,6 @@ function initApp(){
   if(BACKEND_ON()) schedulePoll();
 }
 initApp();
-
-/* ---- added: one-time clean-up of old cached page copies (no database reads) ---- */
 (function(){
   const BUILD='tt2';
   try{ if(localStorage.getItem('atl_build')!==BUILD){ localStorage.setItem('atl_build',BUILD);
